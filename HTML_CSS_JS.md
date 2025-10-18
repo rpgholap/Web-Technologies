@@ -630,3 +630,5 @@ array.forEach(element => {
     console.log(element);
 });
 ```
+
+---
