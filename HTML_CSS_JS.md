@@ -1,4 +1,4 @@
-# Web Development & JavaScript Complete Notes
+# HTML-CSS-JS
 
 ## TABLE OF CONTENTS
 1. Web Applications Architecture
@@ -630,22 +630,3 @@ array.forEach(element => {
     console.log(element);
 });
 ```
-
----
-
-## KEY TAKEAWAYS
-
-✓ Web apps follow client-server architecture with request-response cycle
-✓ HTTP status codes indicate success (2XX), redirection (3XX), client errors (4XX), or server errors (5XX)
-✓ Frontend uses HTML/CSS/JavaScript for UI
-✓ Backend uses Node JS with Express for server, databases for data storage
-✓ HTML provides structure, CSS provides styling, JavaScript provides interactivity
-✓ Forms submit data using GET (default) or POST methods
-✓ CSS selectors have priority: ID > Class > Tag > Universal
-✓ JavaScript is object-oriented and not type-safe by default
-✓ Control structures (if, switch, loops) control program flow
-✓ String interpolation uses template literals with backticks
-
----
-
-**Last Updated**: October 2025
