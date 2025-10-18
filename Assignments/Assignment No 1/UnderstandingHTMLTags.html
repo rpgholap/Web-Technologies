@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version (HTML5) -->
+
+<html lang="en">
+<!-- Root element of the HTML document -->
+
+<head>
+  <!-- Contains meta information about the document (not visible on the webpage) -->
+  <title>HTML Implementation Example</title>
+  <!-- Sets the title of the webpage shown in the browser tab -->
+
+  <meta charset="UTF-8">
+  <!-- Defines the character encoding for the document -->
+
+  <meta name="description" content="Demonstrating HTML concepts like block, inline, div, id, class, iframe, layout, and semantics.">
+  <!-- Provides a short description of the webpage (used by search engines) -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Makes the webpage responsive on all devices -->
+</head>
+
+<body>
+  <!-- All visible content of the webpage goes inside the <body> tag -->
+
+  <!-- HEADER SECTION -->
+  <header>
+    <!-- <header> represents the top section of a webpage, usually containing the title or logo -->
+    <h1>Welcome to My Web Page</h1>
+  </header>
+
+  <!-- NAVIGATION SECTION -->
+  <nav>
+    <!-- <nav> defines a navigation bar that contains links to other sections/pages -->
+    <a href="#">Home</a> |
+    <a href="#">About</a> |
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT SECTION -->
+  <section>
+    <!-- <section> represents a thematic grouping of content -->
+
+    <h2>1. Block and Inline Elements</h2>
+    <!-- <h2> is a heading tag. h1 is the largest, h6 is the smallest -->
+    <p>This is a paragraph — it’s a block element that starts on a new line.</p>
+    <!-- <p> defines a paragraph (block element) -->
+    <div>This is a div block — used to group content.</div>
+    <!-- <div> is a block container used for grouping multiple elements together -->
+
+    <h3>Inline Elements:</h3>
+    <!-- <h3> is a sub-heading -->
+    <span style="color:blue;">This is a span (inline element)</span>
+    <!-- <span> is an inline container used to style part of text -->
+    <a href="#">This is a link (inline)</a>
+    <!-- <a> defines a hyperlink to another page or section -->
+
+    <hr>
+    <!-- <hr> creates a horizontal line (used as a divider) -->
+
+    <h2>2. Div, Class & ID Example</h2>
+    <div class="container" id="mainDiv">
+      <!-- <div> groups content; 'class' is used for styling multiple elements; 'id' uniquely identifies one element -->
+      <h3 class="heading">Inside Div Block</h3>
+      <p class="para">This paragraph is inside a div with class and id attributes.</p>
+    </div>
+
+    <hr>
+
+    <h2>3. Iframe Example</h2>
+    <iframe src="https://www.cdac.in" width="500" height="300" title="CDAC Website"></iframe>
+    <!-- <iframe> embeds another webpage inside the current page -->
+
+    <hr>
+
+    <h2>4. Filepath Example</h2>
+    <img src="images/photo.jpg" alt="Profile Photo" width="150" height="150">
+    <!-- <img> displays an image on the webpage
+         'src' = file path of image
+         'alt' = alternative text (shown if image not found)
+         'width' and 'height' = image size -->
+
+    <hr>
+
+    <h2>5. Semantic & Layout Tags</h2>
+
+    <article>
+      <!-- <article> represents independent content like a blog post or news -->
+      <h3>HTML Semantics Example</h3>
+      <p>Semantic tags like &lt;article&gt;, &lt;section&gt;, &lt;header&gt;, and &lt;footer&gt; make web pages more meaningful and SEO-friendly.</p>
+    </article>
+
+    <aside>
+      <!-- <aside> defines a sidebar that contains related information or links -->
+      <h4>Sidebar</h4>
+      <p>This is an aside section, often used for advertisements or related links.</p>
+    </aside>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <!-- <footer> defines the bottom section of the webpage -->
+    <p>© 2025 My HTML Practice Page</p>
+  </footer>
+
+</body>
+</html>

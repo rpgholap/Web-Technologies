@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hotel Management System</h1>
+    </header>
+
+    <main>
+      <!-- Login Section -->
+      <section id="login-form">
+        <h2>User Login</h2>
+        <form id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" required />
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <!-- Booking Form -->
+      <section id="booking-form" style="display: none">
+        <h2>Book a Room</h2>
+        <form id="roomForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+          <label for="roomType">Room Type:</label>
+          <select id="roomType" required>
+            <option value="Single">Single - $50/night</option>
+            <option value="Double">Double - $80/night</option>
+            <option value="Suite">Suite - $120/night</option>
+          </select>
+          <label for="nights">Nights:</label>
+          <input type="number" id="nights" min="1" required />
+          <button type="submit">Book Now</button>
+        </form>
+      </section>
+
+      <!-- Payment Section -->
+      <section id="payment-section" style="display: none">
+        <h2>Payment</h2>
+        <form id="paymentForm">
+          <label for="cardName">Cardholder Name:</label>
+          <input type="text" id="cardName" required />
+          <label for="cardNumber">Card Number:</label>
+          <input type="text" id="cardNumber" required />
+          <label for="expDate">Expiry Date:</label>
+          <input type="text" id="expDate" placeholder="MM/YY" required />
+          <label for="cvc">CVC:</label>
+          <input type="text" id="cvc" required />
+          <button type="submit">Pay Now</button>
+        </form>
+      </section>
+
+      <!-- Admin Dashboard -->
+      <section id="admin-dashboard" style="display: none">
+        <h2>Admin Dashboard</h2>
+        <button id="viewBookings">View All Bookings</button>
+        <ul id="adminBookingList"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

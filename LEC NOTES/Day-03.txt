@@ -1,0 +1,148 @@
+CSS: Cascading Style Sheet
+
+CSS is used to style a web page
+
+Syntax:
+
+<style>
+selector{
+	property-name:value;
+	property-name:value;
+.....
+}
+</style>
+
+We should always place the style tag into head tag, although it is not mandatory its just a recommendation
+why?
+because head will be loaded first before body tag and during the loading of head into the browser, the browser will prepare the entire styling code and the body will not have to wait for style to be loaded 
+
+
+types of selector:
+1. tag/element selector : in place of selector the tag/element name is there 
+
+  <html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h1>New heading tag</h1>
+</body>
+</html>
+
+2. id selector: id will be written for the selector with # symbol
+		id is used to identify any element uniquely
+
+	<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #head1{
+            color: red;
+        }
+        #head2{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head1">Hello World</h1>
+    <h1 id="head2">New heading tag</h1>
+</body>
+</html>
+
+3. class selector: we can identify few elements commonly with the help of class selector
+
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .red-text{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="red-text">Hello World</h1> 1st h1 -> red color
+    <h1>New heading tag</h1>
+    <p>this is para 1</p>
+    <p class="red-text">this is para 2</p> 2nd para -> red color
+    <p class="red-text">this is para 3</p> 3rd para -> red color
+    <p>this is para 4</p>
+    <span>this is span 1</span>
+    <span>this is span 2</span>
+    <span class="red-text">this is span 3</span> 3rd span -> red color
+    <span class="red-text">this is span 4</span> 4th span -> red color
+</body>
+</html>
+
+4. universal selector *: it will select all the elements in the web page
+
+
+order of preference
+
+id selector -> class selector > tag selector > *
+
+
+Types of css:
+classification of css is done on the basis of where we are writing the css code
+
+1. Internal css: css written inside of a html file in a style tag
+
+2. External css: css written in a separate .css file 
+                 we need to link the external css with the html file
+		<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
+
+3. Inline css: css written inside of a specific tag
+<h1 style="color:red">Hello World</h1>
+
+inline > internal > external
+
+
+ways to represent the color values:
+
+1. color name
+2. hexadecimal code #3b5998
+3. rgb function -> rgb(0-255,0-255,0-255)
+
+
+managing spaces using css:
+
+outer spaces : margin
+top right bottom left 
+margin-left:
+margin-right:
+margin-top:
+margin-bottom:
+
+margin: 40px 50px 30px 25px;
+margin: 100px;
+margin: 50px 100px;
+
+internal spaces
+
+
+
+
+
+
+
+
+
+
+
+
+

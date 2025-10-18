@@ -1,0 +1,78 @@
+Applications
+
+Types of apps:
+
+1. Desktop Apps: directly installed on the system
+
+2. Mobile Apps: 
+
+3. Web Apps/ website:doesn't need any installation we need internet, browser
+
+Web apps architecture:
+
+Client: web browser
+
+Server: system that will contain the entire application and its data 
+
+end users
+
+client will send a request on the server
+server will accept the request
+server will process the request
+server will send response to the client
+client will receive the response and display on the browser
+
+Properties for Request and Response:
+
+Request:
+1. We need ip address of the server to send the request
+	domain name/url -> ip address
+
+2. Request Method: method will specify that for what purpose the request has been sent
+	GET, POST, PUT, DELETE, PATCH
+
+Response:
+
+1. Status : state of current request processing
+   status code is going to be a numeric value
+   status message will be also there
+  
+	status code + status message = status
+	
+  2XX -> 200 OK, 201, 202, 203, 204....299
+  3XX -> 300, 301, 302, .... 399 Redirection
+  4XX -> 400, 401, 402, 403, 404,... 499
+  5XX -> 500, 501, ... 599
+	
+200 Ok -> successful operation
+in case of error, check for the reason:
+1. due to fault of client -> 4XX, 404 Not Found, 400 bad request
+2. due to fault of server -> 5XX
+
+2. Response Data
+
+
+How to develop web apps:
+
+1. Frontend: UI 
+	HTML: creating structure of a web page
+ 	CSS: is for styling of the web page
+        JS: is for client side scripting, executing logics in the browser
+       	JQUERY: library for JS 
+        Bootstrap, MUI, tailwind css: Responsive
+        React js: is library to develop frontend 
+
+2. Backend: server : Processing + DATABASE
+
+Operations/Processing: JavaScript, Express js is a library to develop server 
+Node JS is not a library, it is a runtime env on which we can run js code
+
+Database: store the data
+MySQL, oracle, sql server, mongo db, Cassandra 
+
+MERN Stack: MySQL/Mongo Express React Node
+
+
+
+
+
