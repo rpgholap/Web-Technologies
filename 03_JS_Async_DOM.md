@@ -1,5 +1,4 @@
-# JavaScript Complete Guide: Async Programming & DOM Manipulation
-## (Exam & Implementation Perspective)
+# Async Programming & DOM Manipulation
 
 ---
 
@@ -137,7 +136,7 @@ var myPromise = new Promise((resolve, reject) => {
 
 ---
 
-### 2.3 Promise States (IMPORTANT for Exams)
+### 2.3 Promise States 
 
 | State | Description | Can transition to |
 |-------|-------------|-------------------|
@@ -153,7 +152,7 @@ var myPromise = new Promise((resolve, reject) => {
 
 ---
 
-### 2.4 Creating Promises - Detailed Syntax
+### 2.4 Creating Promises 
 
 **Constructor Syntax**:
 ```javascript
@@ -1925,7 +1924,7 @@ for(var i = 0; i < inputs.length; i++) {
 
 ---
 
-## 5. EXAM-FOCUSED KEY POINTS
+## 5. KEY POINTS
 
 ### 5.1 Promise Key Points
 ✅ Promise has 3 states: Pending, Fulfilled, Rejected
@@ -2068,39 +2067,4 @@ function toggleVisibility() {
     }
 }
 ```
-
----
-
-## 7. FINAL TIPS FOR EXAMS
-
-### For Theory Questions:
-1. Define the concept clearly
-2. Explain why it's used
-3. Give practical example
-4. Mention advantages/disadvantages
-
-### For Coding Questions:
-1. Read question carefully
-2. Plan before coding
-3. Write clean, commented code
-4. Test with sample inputs
-5. Handle edge cases
-
-### Common Mistakes to Avoid:
-❌ Forgetting to convert string inputs to numbers
-❌ Not handling promise rejection
-❌ Missing `async` keyword when using `await`
-❌ Not caching DOM references
-❌ Incorrect CSS property names in JavaScript
-❌ Forgetting `return` in promise chains
-
-### Time Management:
-- Theory: 5-7 minutes per question
-- Code: 10-15 minutes per question
-- Review: Keep 10 minutes at end
-
----
-
-**END OF NOTES**
-
-Good luck with your exam! 🎯
+--- 
