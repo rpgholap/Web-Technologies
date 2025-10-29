@@ -379,6 +379,13 @@ display: block;
 - Element takes full width available
 - Starts on new line
 
+**Display: none**
+```css
+display: none;
+```
+- hide the element
+
+
 ---
 
 ## 6. JAVASCRIPT BASICS
