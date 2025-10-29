@@ -139,11 +139,16 @@ console.log(unique);  // [1, 2, 3, 4, 5]
 - **Purpose**: Represent data in key-value pairs
 - **Syntax**: `{key: value, key: value}`
 - **Standard**: Universal data exchange format
+- **syntax:** {k:v,k:v,k:v,k:v}
+- **obj =** {roll:101, name:"Manoj", marks:87, phone:"888111"}
+- We can store any type of data into json object --> number, Boolean, string, date, json, array
+- JSON representation now has became the standard to represent the data and every server nowadays will send or receive the data into JSON format only 
+
 
 ### Basic Object Operations
 
 ```javascript
-// Simple object
+// Simple object: to store the data of a student 
 let student = {
     roll: 101,
     name: 'Arun',
@@ -310,6 +315,16 @@ console.log(isEmpty({a: 1}));    // false
 ### Function Declaration
 
 ```javascript
+// Syntax:
+return-type name(arguments){
+	body
+	return;
+}
+function name(arguments){
+	body
+	return value;
+}
+
 // Basic function
 function add(a, b) {
     let c = a + b;
@@ -347,7 +362,7 @@ let display = function show() {
 display();
 ```
 
-### Anonymous Functions
+### Anonymous Functions: A function without a name is called anonymous function
 
 ```javascript
 // Anonymous function
@@ -362,10 +377,11 @@ let sum = function(a, b) {
 console.log(sum(4, 5));  // 9
 ```
 
-### Callback Functions
+### Callback Functions: 
+- callback function never executes immediately, it will wait for any event to occur and then the callback function will be executed and till that event the next operations will not be blocked 
 
 ```javascript
-// Callback: Function passed as argument to another function
+// Callback: A Function i.e  passed as argument to another function
 function show(callback) {
     console.log("Inside show");
     callback();
@@ -418,12 +434,19 @@ counter();  // 3
 
 ## 4. Variable Keywords (var, let, const) {#variable-keywords}
 
+- In the absence of var, let, and const keywords the variable will always be treated as global variable, and that property will goes into the window object
+
 ### VAR Keyword
+- using var keyword we can declare global as well as local variables
 
 ```javascript
 // Problem 1: Hoisting
 console.log(a);  // undefined (no error)
 var a = 6;
+
+// console.log(a)
+   a=6                 --> Uncaught ReferenceError: a is not defined at web.html:10:21
+
 
 // Problem 2: Re-declaration allowed
 var a = 7;
@@ -448,6 +471,9 @@ console.log(b);  // 5 (accessible globally)
 ```
 
 ### LET Keyword
+- for let variables hoisting is there but we can't access let variables before initialization
+- we cannot redeclare the let variables
+
 
 ```javascript
 // Block scoped
@@ -469,6 +495,8 @@ let x = 6;  // Error: Identifier 'x' has already been declared
 ```
 
 ### CONST Keyword
+- It is same as let keyword but only a difference is there that we can't update the value of const variables
+
 
 ```javascript
 // Same as let but immutable
@@ -518,15 +546,19 @@ let x = 5;
 
 ---
 
+- For JS everything will be considered as an object, so functions are also considered as objects 
+
 ## 5. Arrow Functions {#arrow-functions}
 
 ### Syntax
 
 ```javascript
-// Traditional function
+// Traditional function:  here the entire function definition for the show will be assigned into obj reference and on the console the entire definition will be logged
+
 function show() {
     console.log("hello world");
 }
+obj();
 
 // Arrow function
 let show = () => {
@@ -781,7 +813,10 @@ console.log(findDuplicates(arr));  // [2, 3]
 
 ## 7. Asynchronous JavaScript {#async-javascript}
 
-### Synchronous vs Asynchronous
+## Synchronous: Blocking Nature 
+
+## Asynchronous: Non-blocking Nature
+- to make any operation asynchronous callback functions will be used
 
 ```javascript
 // SYNCHRONOUS (Blocking)
@@ -840,6 +875,10 @@ setTimeout(() => {
 ```
 
 ### Callback Hell
+- whenever we want to make multiple async operations running in sync way then we have to go into nesting of the callback functions
+- Nesting of the callback functions is known as callback hell
+- We always have to prevent callback hell
+
 
 ```javascript
 // Problem: Nesting callbacks for sequential operations
@@ -870,6 +909,29 @@ setTimeout(() => {
 
 ### Promises (Solution to Callback Hell)
 
+- Promise is used to avoid the callback hell
+- Steps: 
+    step 1: We have to make a promise
+    step 2: Promise will be executed
+    step 3: Now Either Promise will be fulfilled or it will be rejected
+    step 4: Promise handling: based on the promise state we have to take suitable actions
+  
+- Promise will have 3 states:
+    1. Pending: till the promise task is not executed
+    2. Resolved
+    3. Rejected
+- We as a developer, while creating a promise has to decide manually in which case promise will be resolved and it will rejected
+- In the promise callback, 2 arguments will be always there and they will be automatically populated and they will become functions.
+  1. A function to resolve the promise
+  2. A function to reject the promise
+     
+- Promise handling:
+we need the object of promise to handle it
+on the promise object we have to call two predefined functions those are going to handle it
+1. then : when promise will be resolved then will be called
+2. catch: when promise is rejected catch will be called
+
+
 ```javascript
 // Promise basic structure
 let promise = new Promise((resolve, reject) => {
@@ -883,7 +945,7 @@ let promise = new Promise((resolve, reject) => {
     }
 });
 
-// Using promise
+// promise handling : based on promise state we have to take actions
 promise
     .then(result => {
         console.log(result);
@@ -902,8 +964,11 @@ function add(a, b) {
         setTimeout(() => {
             if(typeof a === 'number' && typeof b === 'number') {
                 resolve(a + b);
+                // mark the promise as resolved
             } else {
                 reject("Invalid input");
+                // mark the promise as rejected
+
             }
         }, 2000);
     });
@@ -950,6 +1015,11 @@ add(2, 3)
 ```
 
 ### Async/Await (Modern Approach)
+- way of handling the promises
+- using async and await keyword
+    1. then & catch
+    2. async & await keywords
+
 
 ```javascript
 // Same operations with async/await
