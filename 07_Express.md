@@ -1,4 +1,4 @@
-# Express.js, Middleware, and REST APIs --- Interview & Exam Notes
+# Express.js, Middleware, and REST APIs
 
 ## 1. MySQL2 Installation
 
@@ -40,12 +40,13 @@ const [x, y] = myArray;
 2.  **Request Body** --- Data sent hidden in the body (used in POST,
     PUT, etc.).
 
-  Type            Visibility       Commonly Used In
-  --------------- ---------------- -------------------
-  URL Parameter   Visible in URL   GET Requests
-  Request Body    Hidden           POST, PUT, DELETE
+## Client-to-Server Data Transfer Methods
 
-------------------------------------------------------------------------
+| Type | Visibility | Commonly Used In |
+| :---------------- | :-------------------- | :-------------------------- |
+| **URL Parameter** | Visible in the URL | GET Requests |
+| **Request Body** | Hidden (Sent in request payload) | POST, PUT, DELETE Requests |
+
 
 ## 4. Request and Response Bodies
 
@@ -136,16 +137,14 @@ app.listen(4500);
 -   Data usually in **JSON** format.
 -   Lightweight and faster.
 
-**Comparison:**
+## API Architecture Comparison
 
-  Feature       SOAP                    REST
-  ------------- ----------------------- ------------------------
-  Format        XML                     JSON / XML
-  Speed         Slower                  Faster
-  Flexibility   Rigid                   Flexible
-  Use Case      Enterprise-level apps   Modern web/mobile apps
-
-------------------------------------------------------------------------
+| Feature | SOAP (Simple Object Access Protocol) | REST (Representational State Transfer) |
+| :------------- | :----------------------------------- | :------------------------------------- |
+| **Format** | XML (eXtensible Markup Language) | JSON (JavaScript Object Notation) / XML |
+| **Speed** | Slower (due to larger XML payloads) | Faster (due to lightweight JSON) |
+| **Flexibility** | Rigid (follows strict standards/contracts) | Flexible (less stringent, leverages HTTP methods) |
+| **Use Case** | Enterprise-level applications (e.g., banking, legacy systems) | Modern web/mobile apps, microservices |
 
 ## 8. Example Use Case
 
@@ -154,21 +153,14 @@ app.listen(4500);
 All can use the **same backend REST API** to share data between
 platforms.
 
-------------------------------------------------------------------------
 
-## Quick Recap
+ ## Express.js & API Terminology
 
-  Concept          Description
-  ---------------- -----------------------------------------
-  Middleware       Function executed before route handling
-  express.json()   Parses JSON request body
-  GET              Cannot handle request body
-  POST             Used to send data in body
-  REST API         Lightweight web API using HTTP verbs
-  SOAP API         XML-based web API
-
-------------------------------------------------------------------------
-
-**Prepared for:** Interview & Exam Point of View\
-**Topic:** Express.js, Middleware, REST API Fundamentals\
-**Language:** JavaScript / Node.js
+| Term | Description |
+| :---------------- | :------------------------------------------- |
+| **Middleware** | Function executed before the actual route handling begins. |
+| **express.json()** | Built-in Express middleware that parses incoming **JSON** request bodies. |
+| **GET** | HTTP method that **cannot** be used to send data in the request body. |
+| **POST** | HTTP method primarily used to send data in the request body (e.g., creating a resource). |
+| **REST API** | Lightweight web API architecture that leverages standard **HTTP verbs** and typically uses JSON. |
+| **SOAP API** | Older, more rigid web API architecture that uses **XML** for messaging. |
