@@ -443,6 +443,8 @@ function getData() {
 ### 3.2 The `async` Keyword
 
 **Purpose**: Declares an asynchronous function
+- has to applied on the function signature in which await keyword has been written or it can be applied on the functions which are returning promise
+
 
 **Characteristics**:
 - Always returns a Promise
@@ -490,6 +492,7 @@ greet().then(msg => console.log(msg)); // "Hello"
 ### 3.3 The `await` Keyword
 
 **Purpose**: Pauses execution of async function until Promise is settled
+- when a function is called which is returning a promise, we can place await keyword in the call
 
 **Characteristics**:
 - Can only be used inside `async` functions
@@ -539,6 +542,19 @@ async function fetchData() {
         console.log("Error occurred:", error);
     }
 }
+```
+
+```
+try{
+	var sumResult = await sum(2,3);
+	var factResult = await factorial(sumResult);
+	var sqResult = await square(factResult);
+
+}
+catch(error){
+	console.log(error);
+}
+
 ```
 
 **Method 2: .catch() on function call**
@@ -829,10 +845,21 @@ async function handleMultiple() {
 
 **Definition**: The DOM is a programming interface for HTML and XML documents. It represents the page structure as a tree of objects that can be manipulated with JavaScript.
 
+- Whenever a web page is loaded in the browser then 1st it creates a tree like structure for all the tags and this tree structure is called DOM, and by reading this DOM only the browser displays the elements 
+
 **When DOM is Created**: 
 - When browser loads an HTML page
 - Before displaying the page
 - Creates a tree structure in memory
+
+Once the DOM has been created in the browser memory, so we can perform certain modification in the tree structure and hence the page will be live updated 
+    1. We can add new element
+    2. We can remove existing element from the DOM
+    3. We can change the content of any element
+    4. We can get the content of the element
+    5. We can change the style also 
+    6. We can change the attribute values
+    7. We can get the attribute values
 
 **Purpose**:
 - Allows JavaScript to access and manipulate HTML elements
@@ -867,6 +894,7 @@ Document
 ### 4.3 The `document` Object
 
 **Definition**: Global object representing the entire HTML document
+- document is an object that represent the DOM
 
 **Common Properties**:
 - `document.title` - Page title
@@ -1036,6 +1064,24 @@ element.innerHTML = "<strong>New content</strong>";
 </script>
 ```
 
+```
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>This is para demo</p>
+    <button onclick="handleButtonClick()">Click</button>
+    <script>
+        function handleButtonClick(){
+            alert("hello world");
+        }
+    </script>
+</body>
+</html>
+```
+
+
 **Use Cases**:
 - Reading HTML content
 - Setting HTML content with formatting
@@ -1043,6 +1089,7 @@ element.innerHTML = "<strong>New content</strong>";
 
 ---
 
+```
 #### Property 2: `innerText`
 **Gets or sets text content only (ignores HTML tags)**
 
