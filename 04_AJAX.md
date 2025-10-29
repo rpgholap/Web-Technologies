@@ -15,6 +15,7 @@
 ## What is AJAX?
 
 **AJAX** stands for **Asynchronous JavaScript And XML**. It's a technique that allows web pages to communicate with servers and update content **without reloading the entire page**.
+- Using AJAX we can send request and get the response from a server and that is too without reloading the browser and without blocking the other process
 
 ### Key Features:
 - ✅ **Asynchronous** - Doesn't block other operations
@@ -33,6 +34,18 @@ User clicks → Page reload → White screen → New page loads → Data display
 ❌ Entire page reloads
 ❌ All resources downloaded again
 ```
+---
+
+### steps
+```
+1. Create an object XMLHttpRequest
+	var xhr  =  new XMLHttpRequest();
+2. Open a request / initialize a request
+	xhr.open() where req has to sent and what should be the req method
+3. send the request
+	xhr.send()
+```
+--- 
 
 ### AJAX Request:
 ```
@@ -68,6 +81,14 @@ xhr.send();
 ## XMLHttpRequest States
 
 Every AJAX request goes through **5 states** tracked by `readyState`:
+- we have to recognize the current state/status of the request
+- when a request is sent from a client/browser then always the browser will maintain a state for the request using a numeric value : 0 1 2 3 4 readyState
+    - readyState 0 : new object of XMLHttpRequest has been created 
+    - readyState 1 : request has been initialized / open() has been called
+    - readyState 2 : request has been sent
+    - readyState 3 : server accepted the request and started processing it
+    - readyState 4 : response is ready at the client side
+
 
 | State | Value | Description | What's Happening |
 |-------|-------|-------------|------------------|
