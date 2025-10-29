@@ -256,6 +256,13 @@
 ```
 
 ### CSS Selectors
+Selectors are used to **target specific HTML elements** and apply styles to them.
+
+```css
+selector {
+  property: value;
+}
+```
 
 **1. Tag/Element Selector**
 ```css
@@ -357,11 +364,44 @@ margin: 40px 50px 30px 25px;  /* top right bottom left */
 margin: 100px;                 /* all sides */
 margin: 50px 100px;            /* top/bottom left/right */
 ```
+---
+
+### `background`
+The shorthand property for setting **all background styles** (color, image, position, repeat, etc.) in one line.
+
+```css
+body {
+  background: url('images/bg.jpg') no-repeat center/cover;
+}
+```
+
+### `background-image`
+Used specifically to set only the **image** as the background.
+
+```css
+body {
+  background-image: url('images/bg.jpg');
+}
+```
+
 
 **Inner Space (Padding/Cellpadding)**
 ```css
 padding: value;
 ```
+
+### Tips
+- Use **relative paths** like `images/bg.jpg` when the image is in your project folder.  
+- Use **absolute paths** like `https://example.com/bg.jpg` for online images.  
+- Combine gradients and images:
+  ```css
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  ```
+
 
 ### Display Properties
 
@@ -385,6 +425,26 @@ display: none;
 ```
 - hide the element
 
+  
+## @keyframes (CSS Animations)
+
+The `@keyframes` rule defines **how an element’s style changes over time**.
+
+```css
+@keyframes moveRight {
+  0%   { transform: translateX(0); background-color: #4caf50; }
+  50%  { transform: translateX(100px); background-color: #2196f3; }
+  100% { transform: translateX(0); background-color: #4caf50; }
+}
+```
+
+### ⚙️ Animation Properties
+| Property | Example | Description |
+|-----------|----------|-------------|
+| `animation-name` | `moveRight` | Name of the keyframes animation |
+| `animation-duration` | `2s` | Duration of one animation cycle |
+| `animation-iteration-count` | `infinite` | Number of times the animation repeats |
+| `animation-timing-function` | `ease`, `linear`, `ease-in` | Controls the pacing of the animation |
 
 ---
 
@@ -396,7 +456,7 @@ display: none;
 
 **Key Concept**: Everything is an object in JavaScript (including UI elements and values)
 
-**JavaScript Engine by Browser:**
+**JavaScript Engine by Browser:** Every Browser comes with a JS Engine i.e the interpreter for JS code. 
 - **Chrome**: V8 Engine
 - **Mozilla Firefox**: Spider Monkey Engine
 
@@ -410,17 +470,19 @@ display: none;
 
 ### Implicit Objects
 
-**1. Document Object**
+**1. Document Object:** Object of web page 
 - Represents the entire web page
+- it is an implicit object (already defined and developer need not to define it manually)
+- represents entire web page
 - Automatically defined (no need to define manually)
-- Used to perform operations on the web page
+- Used to perform any operations on the web page
 
 ```javascript
 document.write("hello world");
 document.write("<h1>Heading text</h1>");
 ```
 
-**2. Window Object**
+**2. Window Object:** 
 - Points to browser's window
 - Contains all global functions
 
@@ -429,7 +491,7 @@ window.alert("message");
 alert("message");  // Window object reference is automatic
 ```
 
-**3. Console Object**
+**3. Console Object:** Object of console 
 - Used for debugging
 - Displays output in browser console
 
