@@ -1,4 +1,4 @@
-# React JS - Complete Guide (Study Notes & Interview Prep)
+# React JS 
 
 ## Table of Contents
 1. [Introduction to React](#introduction-to-react)
@@ -8,9 +8,6 @@
 5. [JSX (JavaScript XML)](#jsx-javascript-xml)
 6. [Props (Properties)](#props-properties)
 7. [Routing](#routing)
-8. [Authentication & Authorization](#authentication--authorization)
-9. [Advanced Topics](#advanced-topics)
-10. [Interview Questions](#interview-questions)
 
 ---
 
@@ -473,150 +470,7 @@ Navigation without page reload (instead of `<a>` tag).
 // ✅ Use Link component
 <Link to="/about">About</Link>
 ```
-
-### Advanced Routing
-
-**Dynamic Routes:**
-```jsx
-<Route path="/user/:id" element={<UserProfile />} />
-
-// Access parameter in component
-import { useParams } from 'react-router-dom';
-
-function UserProfile() {
-  const { id } = useParams();
-  return <h1>User ID: {id}</h1>;
-}
-```
-
-**Nested Routes:**
-```jsx
-<Route path="/dashboard" element={<Dashboard />}>
-  <Route path="profile" element={<Profile />} />
-  <Route path="settings" element={<Settings />} />
-</Route>
-```
-
-**Protected Routes:**
-```jsx
-function ProtectedRoute({ children }) {
-  const isAuthenticated = checkAuth();
-  return isAuthenticated ? children : <Navigate to="/login" />;
-}
-
-<Route path="/admin" element={
-  <ProtectedRoute>
-    <AdminPanel />
-  </ProtectedRoute>
-} />
-```
-
----
-
-## Authentication & Authorization
-
-### JWT Authentication
-
-Once login API returns a **token**, you need to pass it in subsequent API calls.
-
-### Where to Send Token?
-**Request Header** → Contains metadata of the request
-
-### Authorization Header
-```javascript
-// Standard format
-Authorization: 'Bearer <token-value>'
-
-// Example
-Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
-```
-
-### Implementation Example
-
-```javascript
-// Login and store token
-async function login(username, password) {
-  const response = await fetch('/api/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, password })
-  });
-  
-  const data = await response.json();
-  // Store token (localStorage, sessionStorage, or state management)
-  localStorage.setItem('token', data.token);
-}
-
-// Make authenticated API call
-async function getSecuredData() {
-  const token = localStorage.getItem('token');
-  
-  const response = await fetch('/api/secured-endpoint', {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    }
-  });
-  
-  return await response.json();
-}
-```
-
-### JWT with RSA (Public/Private Keys)
-- **Private Key**: Used by server to sign tokens
-- **Public Key**: Used to verify token signature
-- More secure than HMAC (symmetric) for distributed systems
-
-### Role-Based Access Control (RBAC)
-
-```javascript
-// Store user role with token
-{
-  token: "...",
-  user: {
-    id: 1,
-    role: "admin" // or "user", "manager"
-  }
-}
-
-// Check role before rendering
-function AdminPanel() {
-  const user = getCurrentUser();
-  
-  if (user.role !== 'admin') {
-    return <Navigate to="/unauthorized" />;
-  }
-  
-  return <div>Admin Panel Content</div>;
-}
-```
-
----
-
-## Advanced Topics
-
-### TypeScript
-Type-safe JavaScript for better code quality and developer experience.
-
-```tsx
-// Component with TypeScript
-interface CardProps {
-  heading: string;
-  intro: string;
-  buttonText: string;
-}
-
-const Card: React.FC<CardProps> = ({ heading, intro, buttonText }) => {
-  return (
-    <div className="card">
-      <h1>{heading}</h1>
-      <p>{intro}</p>
-      <button>{buttonText}</button>
-    </div>
-  );
-};
-```
+--- 
 
 ### Backend Integration Topics
 
@@ -747,61 +601,6 @@ function App() {
 - Easier maintenance
 - Better performance (Virtual DOM)
 
-### Coding Challenges
-
-**13. Create a Navbar component used across pages**
-```jsx
-// Navbar.jsx
-function Navbar() {
-  return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-    </nav>
-  );
-}
-
-// Use in App.jsx
-<Navbar />
-<Routes>...</Routes>
-```
-
-**14. Authenticated API call**
-```javascript
-const fetchUserData = async () => {
-  const token = localStorage.getItem('token');
-  
-  const response = await fetch('/api/user/profile', {
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
-  });
-  
-  return await response.json();
-};
-```
-
-**15. Protected Route implementation**
-```jsx
-function ProtectedRoute({ children }) {
-  const token = localStorage.getItem('token');
-  
-  if (!token) {
-    return <Navigate to="/login" />;
-  }
-  
-  return children;
-}
-
-// Usage
-<Route path="/dashboard" element={
-  <ProtectedRoute>
-    <Dashboard />
-  </ProtectedRoute>
-} />
-```
-
 ---
 
 ## Project Implementation Checklist
@@ -824,35 +623,7 @@ function ProtectedRoute({ children }) {
 - [ ] Use Link for navigation
 - [ ] Implement protected routes if needed
 
-### API Integration
-- [ ] Set up axios or fetch
-- [ ] Implement authentication (JWT)
-- [ ] Add Authorization header to requests
-- [ ] Handle token storage (localStorage/context)
-
-### Best Practices
-- [ ] Component names start with capital letter
-- [ ] One component per file
-- [ ] Use destructuring for props
-- [ ] Keep components small and focused
-- [ ] Use meaningful prop names
-
 ---
-
-## Quick Reference
-
-### Component Template (Function)
-```jsx
-function ComponentName({ prop1, prop2 }) {
-  return (
-    <div>
-      {/* Your JSX */}
-    </div>
-  );
-}
-
-export default ComponentName;
-```
 
 ### Component Template (Class)
 ```jsx
@@ -869,20 +640,6 @@ class ComponentName extends Component {
 }
 
 export default ComponentName;
-```
-
-### API Call Template
-```javascript
-const response = await fetch('/api/endpoint', {
-  method: 'GET', // or POST, PUT, DELETE
-  headers: {
-    'Authorization': `Bearer ${token}`,
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data) // for POST/PUT
-});
-
-const result = await response.json();
 ```
 
 ---
@@ -905,5 +662,3 @@ const result = await response.json();
 - Component names must be capitalized
 
 ---
-
-**Remember**: React is all about **building reusable components** and **managing data flow** efficiently!
