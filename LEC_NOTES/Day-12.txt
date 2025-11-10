@@ -1,0 +1,104 @@
+mysql2
+
+npm i mysql2
+
+const obj = {id:11,name:"hd"};
+
+const {id,name} = obj;
+
+
+const myArray = [
+			[1,2,3],
+			["hello","hi"]
+		];
+
+
+const [x,y] =  myArray;
+
+
+there are two ways to send data in the request
+
+1. url parameter
+2. request body: along with the request we can send the data without showing it on the url
+
+response data -> response body
+
+request data -> request body
+
+GET request method can't handle the request body
+
+by default express app doesn't process the request body by itself
+
+because we can have any type of data in the request body like json, binary, graphql so express can't decide by itself that what type of request body it has to process
+ 
+a developer has to manually enable the processing of the request body
+
+middleware: is a function that will be executed before request processing starts
+so when request arrives on a server now 1st the middleware will be called and then the actual processing will be started
+
+
+request arrives -> middleware -> callback fn processing request and response
+
+express js also provides some predefined middlewares and developer also can create middlewares
+
+import express from 'express';
+
+const app = express();
+
+app.use(express.json()); // if a middleware has to be executed for every request
+
+app.get("/",(request,response)=>{
+    response.send({message:'Welcome to app'})
+});
+
+app.post("/sum",(request,response)=>{
+    console.log(request.body);
+    response.send({message:"hello"});
+});
+
+app.post("/factorial",(request,response)=>{
+    console.log(request.body);
+    response.send({message:"hello"});
+});
+
+app.listen(4500);
+
+
+API: Application Programming Interface
+
+Using API we can use the functionality/services of one application into another
+
+
+two types of APIs
+1. System level API
+2. Web API/ Web Services: API running on a web server
+
+two types of Web APIs/two types of architecture:
+1. SOAP APIs: XML data
+2. REST APIs: REpresentational State Transfer
+ REST APIs/REST Web Services
+
+
+
+sweet shop: Website, android, ios 
+
+mobile app:
+web app:
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+

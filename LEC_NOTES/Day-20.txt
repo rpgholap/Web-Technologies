@@ -1,0 +1,100 @@
+
+
+
+html: form
+validation: manually write conditions
+
+
+Formik: handle the form data, yup: validation schema
+
+
+validation schema:
+
+react-bootstrap bootstrap formik yup
+
+ErrorBoundary: it is a component that handles the errors 
+
+
+useEffect(()=>{return ()=>{}},[]); -> componentDidMount
+
+useEffect(callback,[x,y,z]); -> componentDidUpdate
+
+Redux: 3rd party module
+
+A B C D.... 15th 
+
+props drilling 
+
+A.jsx
+export function A(){
+	
+	const [users, setUsers] = useState();
+
+	return (
+	<div>
+		<B data={users}></B>
+		<form></form>
+	</div>
+		
+	
+	)
+}
+
+B.jsx
+export function B(props){
+	return (
+		<C data={props.data}></C>
+	
+	)
+}
+
+export function C(props){
+	return (
+		<D data={props.data}></D>
+	
+	)
+}
+
+export function D(props){
+	return (
+	
+	<Table></Table>
+	)
+}
+
+Redux has given an approach that instead of containing data into the component's local state, we should keep the data into the centralized store
+
+Redux has 3 fundamental building blocks:
+1. Action : The name of operation, and developer has to decide the name manually
+		and once action has been created, now in order to update the store data, action has to be fired/dispatched
+
+action is an object : {type:"INCREMENT_SCORE"}, {type:"DECREMENT_SCORE"}
+
+ 
+2. Reducer : function that will be executed for the dispatched action, reducer function will automatically have the access for current action fired and the redux store
+the data returned by the reducer function will become the latest store data 
+
+            
+		switch(action.type){
+			case "INCREMENT_SCORE": ;
+				
+		}
+
+
+3. Store: keep the data into centralized place
+
+
+
+   npm i redux react-redux @reduxjs/toolkit
+
+
+
+manage api calls using redux
+mapStateToProps
+mapDispatchToProps
+RTK query
+
+
+
+
+

@@ -1,0 +1,451 @@
+
+a = 5
+b = 3
+c = 6
+
+100 values
+
+Array: is a collection of elements either homo/hetro, size is not fixed and it is flexible
+
+syntax: []
+
+a = [10,20,30,"hello","hi",true,5.6,9.8] 
+
+a = [10,20,30,"hello","hi",true,5.6,9.8];
+console.log(a);
+console.log(a[0], a[1]);
+console.log(a.length);
+
+
+a = [10,20,30,"hello","hi",true,5.6,9.8];
+        
+        for(i=0; i<a.length; i++){
+            console.log(a[i]);
+        }
+
+for of loop
+
+for(element_name of array_name){
+
+}
+
+for(value of a){
+
+}
+
+
+a = [10,20,30,"hello","hi",true,5.6,9.8];
+        
+        for (value of a) {
+            console.log(value);
+        }
+
+
+a = [8,13,43,10,9];
+
+        max = a[0]; // 8
+
+        for(i=1; i<a.length; i++){
+            if(max < a[i]){
+                max=a[i];
+            }
+        }
+        console.log(max);
+
+
+ a = [8,13,43,10,9];
+
+        min = a[0]; // 8
+
+        for(i=1; i<a.length; i++){
+            if(min > a[i]){
+                min=a[i];
+            }
+        }
+        console.log(min);
+
+swap max element with min element in given array
+
+
+
+types of array:
+1. single dimen 1D a = [8,13,43,10,9];
+2. multi dimen 2d, 3d, 4d, 
+
+2d array: array of 1d arrays 
+
+ b = [
+                [10,20,30],
+                [40,50,60,55,88],
+                [70,80,90,12]
+            ];
+
+        
+        console.log(b.length);
+        console.log(b[0]);
+        console.log(b[1])
+
+
+b = [
+                [10,20,30],
+                [40,50,60,55,88],
+                [70,80,90,12]
+            ];
+
+        
+        for(i=0; i<b.length; i++){
+            for(j=0; j<b[i].length; j++){
+                console.log(b[i][j]);
+            }
+        }
+
+
+
+
+spread operator ...
+
+a = [10,20,30,40];
+
+        b = [34,56,36];
+
+        c = [...a,...b];
+
+        console.log(c);
+
+
+a = [[10,20,30],[40,50,60]];
+
+        b = [34,56,36];
+
+        z = [...a[0],...a[1]]
+
+        c = [...z,...b];
+
+        console.log(c);
+
+
+JSON : JavaScript Object Notation
+
+JSON is a way to represent the data in a key and value pair
+
+to store the data of a student
+
+roll, name, marks, phone
+
+syntax: {k:v,k:v,k:v,k:v}
+
+obj = {roll:101, name:"Manoj", marks:87, phone:"888111"}
+
+We can store any type of data into json object
+number, Boolean, string, date, json, array
+
+
+obj = {roll:101, name:'Arun', marks:98, phone:'988811', age:19};
+
+        console.log(obj);
+        console.log(obj.roll);
+        console.log(obj.name);
+        console.log(obj.marks);
+        console.log(obj.phone);
+        console.log(obj.age);
+
+obj.roll
+obj['roll']
+
+console.log(obj['roll'], obj['name'], obj['marks'], obj['phone']);
+
+JSON representation now has became the standard to represent the data
+and every server nowadays will send or receive the data into JSON format only 
+
+ obj = {
+                roll:101, 
+                name:'Arun', 
+                marks:98, 
+                phone:'988811', 
+                age:19, 
+                hobbies:['dance','music','cricket'],
+		address: "A-156, Pune, Maha...."
+            };
+        console.log(obj);
+        console.log(obj.roll);
+        console.log(obj.name);
+        console.log(obj.marks);
+        console.log(obj.phone);
+        console.log(obj.age);
+        console.log(obj.hobbies);
+
+
+obj = {
+                roll:101, 
+                name:'Arun', 
+                marks:98, 
+                phone:'988811', 
+                age:19, 
+                hobbies:['dance','music','cricket'],
+                address:{ houseNo:'A176', locality:'JS nagar', city:'reactpur', state:'RJ'}
+            };
+
+ console.log(obj.address.houseNo, obj.address.locality, obj.address.city);
+
+we can destructure any given json object:
+
+
+
+const {name,marks,roll,phone,age,hobbies,address} = obj;
+
+console.log(roll);
+
+obj = {
+            roll: 101,
+            name: 'Arun',
+            marks: 98,
+            phone: '988811',
+            age: 19,
+            hobbies: ['dance', 'music', 'cricket'],
+            address: { houseNo: 'A176', locality: 'JS nagar', city: 'reactpur', state: 'RJ' }
+        };
+
+        const {roll,name, age, hobbies, address} = obj;
+        const {houseNo,locality,city} = address;
+
+        console.log(roll);
+        console.log(name);
+        console.log(age);
+        console.log(hobbies);
+        console.log(houseNo, locality, city);
+
+
+
+array of objects:
+
+student_list = [{
+            roll: 101,
+            name: 'Arun',
+            marks: 98,
+            phone: '988811',
+            age: 19,
+            hobbies: ['dance', 'music', 'cricket'],
+            address: { houseNo: 'A176', locality: 'JS nagar', city: 'reactpur', state: 'RJ' }
+        },
+            {
+                roll: 102,
+                name: 'Rajesh',
+                marks: 67,
+                phone: '97252552',
+                age: 20,
+                hobbies: ['music', 'cricket'],
+                address: { houseNo: 'A176', locality: 'JS nagar', city: 'reactpur', state: 'RJ' }
+            },
+            {
+                roll: 103,
+                name: 'Priya',
+                marks: 100,
+                phone: '866777',
+                age: 19,
+                hobbies: ['dance', 'music'],
+                address: { houseNo: 'A176', locality: 'JS nagar', city: 'reactpur', state: 'RJ' }
+            }];
+
+console.log(student_list);
+            console.log(student_list.length);
+
+            for(i=0; i<student_list.length; i++){
+                console.log(student_list[i].roll, student_list[i].name, student_list[i].phone,student_list[i].marks, student_list[i].age );
+                
+                for(j = 0; j < student_list[i].hobbies.length; j++){
+                    console.log(student_list[i].hobbies[j]);
+                }
+
+            }
+
+
+ console.log(student_list);
+            console.log(student_list.length);
+
+            for(i=0; i<student_list.length; i++){
+                const {roll, name, phone, age, marks, hobbies} = student_list[i];
+                
+                console.log(roll, name, phone,marks,age );
+                
+                for(j = 0; j < hobbies.length; j++){
+                    console.log(hobbies[j]);
+                }
+
+            }
+
+
+for(i=0; i<student_list.length; i++){
+                
+                const {roll, name, phone, age, marks, hobbies, address} = student_list[i];
+                const {houseNo, locality, city} = address;
+
+                console.log(roll, name, phone,marks,age, city, houseNo, locality );
+                
+                for(j = 0; j < hobbies.length; j++){
+                    console.log(hobbies[j]);
+                }
+
+            }
+
+finding out topper:
+
+topper = student_list[0];
+
+            for(i = 1; i < student_list.length; i++){
+                if(topper.marks < student_list[i].marks ){
+                    topper = student_list[i];
+                }
+            }
+
+            console.log(topper);
+
+
+spread operator on json object:
+
+o1 = {id:101, name:'Ravi'};
+
+        o2 = {phone:'888', email:'dfsdfsf@fff.com'}
+
+        o3 = {...o1, ...o2};
+
+        console.log(o3);
+
+
+
+
+
+productPrice = 2345;
+
+        product = {id:1222, name:'keyboard', price:productPrice};
+
+        console.log(product);
+
+
+note: if in json object only variable name is written directly  without k:v syntax, then variable name will be considered as key name 
+
+productprice = 2345;
+
+        product = {id:1222, name:'keyboard', productprice};
+
+        console.log(product); 
+{
+    "id": 1222,
+    "name": "keyboard",
+    "productprice": 2345
+}
+
+
+id = 111;
+        name = "keyboard";
+        price = 445;
+
+        product = {id, name, price};
+
+        console.log(product);
+
+case 1 : variable name is getting considered as keyname
+
+case 2 : value of variable can be considered as keyname
+
+
+x = 'price';
+
+obj = { [x]: 2344 }
+ 
+
+x = 'productPrice';
+
+        obj = { [x] : 2333 }
+        console.log(obj); {productPrice:2333}
+
+
+functions:
+is a collection statements those are grouped together
+
+
+return-type name(arguments){
+	body
+	return;
+}
+
+function name(arguments){
+	body
+	return value;
+}
+
+function add(a,b){
+            c = a + b;
+            return c;
+        }
+
+        sum = add(3,4);
+        
+        console.log(sum);
+
+
+function findMax(a,b){
+            
+            return a>b?a:b;
+            
+        }
+
+        findMax(76,23);
+
+
+
+keywords to declare variables:
+
+var, let, const
+
+
+function show(){
+            a = 5;
+            console.log("inside show a=",a); // 5
+        }
+
+        show();
+
+        console.log("outside show a=",a); // 5
+
+
+note: in the absence of var, let, and const keywords the variable will always be treated as global variable, and that property will goes into the window object
+
+var keyword:
+using var keyword we can declare global as well as local variables
+
+
+
+function show(){
+            var a = 5;
+            console.log("inside show a=",a); // 5
+        }
+
+        show();
+
+        console.log("outside show a=",a); // error: a is not defined 
+ //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

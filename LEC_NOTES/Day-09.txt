@@ -1,0 +1,51 @@
+AJAX : Asynchronous JavaScript And XML
+
+Using AJAX we can send request and get the response from a server and that is too without reloading the browser and without blocking the other process
+
+XML 
+
+<student>
+	<id>1100</id>
+	<name>Rohan</name>
+	<phone>888881111</phone>
+</student>
+
+
+steps:
+
+1. Create an object XMLHttpRequest
+	var xhr  =  new XMLHttpRequest();
+
+2. Open a request / initialize a request
+	xhr.open() where req has to sent and what should be the req method
+	
+3. send the request
+
+	xhr.send()
+
+we have to recognize the current state/status of the request
+when a request is sent from a client/browser then always the browser will maintain a state for the request using a numeric value
+0 1 2 3 4 readyState
+
+readyState 0 : new object of XMLHttpRequest has been created 
+
+readyState 1 : request has been initialized / open() has been called
+
+readyState 2 : request has been sent
+
+readyState 3 : server accepted the request and started processing it
+
+readyState 4 : response is ready at the client side
+
+
+
+
+
+
+
+
+
+
+
+
+

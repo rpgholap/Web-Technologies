@@ -1,0 +1,7 @@
+E-commerce:
+
+
+Admin -> CRUD on products
+Customer -> search product, buy product
+Product
+Order -> id, customer_id, product_id, date

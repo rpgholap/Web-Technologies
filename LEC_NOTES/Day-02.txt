@@ -1,0 +1,249 @@
+HTML:
+
+
+p, h1...h6, a, img, ol, li, ul
+
+p-> every p tag/element will be started from new line
+
+span -> every span element will be started form same line 
+
+table: rows and columns
+
+step 1: outer box of table <table>
+step 2: rows inside of the table <tr>
+step 3: column/cell inside of the row <td>
+
+<table border="1">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Aman</td>
+            <td>999991111</td>
+            <td>aman@gmail.com</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Rashmi</td>
+            <td>8881111</td>
+            <td>rashmi@gmail.com</td>
+        </tr>
+    </table>
+
+space inside of a cell : cellpadding
+space outside of a cell : cellspacing  
+
+
+<table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Aman</td>
+            <td>999991111</td>
+            <td>aman@gmail.com</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Rashmi</td>
+            <td>8881111</td>
+            <td>rashmi@gmail.com</td>
+        </tr>
+    </table>
+
+<table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Aman</td>
+            <td>999991111</td>
+            <td>aman@gmail.com</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Rashmi</td>
+            <td>8881111</td>
+            <td>rashmi@gmail.com</td>
+        </tr>
+    </table>
+
+thead -> denote header row
+tbody -> denote data rows
+
+<table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Aman</td>
+                <td>999991111</td>
+                <td>aman@gmail.com</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Rashmi</td>
+                <td>8881111</td>
+                <td>rashmi@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+forms:
+
+form tag is not used to display the form
+form tag is used to submit the data to the server
+
+whenever client is sending a request then always a request method will there, if we have specified then our specified request method will be considered otherwise the default will be GET  
+
+<form action="url" method="">
+
+</form>
+
+div 
+
+101 Btech
+102 Mtech
+103 BSC
+104 MSC
+
+in HTML 3 types of buttons are there:
+
+1. Plain button: not having its own functionality, a developer has to define it manually  
+	<input type="button" value="Click">
+            <button type="button">Click me</button>
+
+2. Submit button: if a submit button is inside of a form then it is having its own functionality  
+3. Reset button: will clear the entire form data
+
+1st way: <input>
+2nd way: <button>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://www.google.com">
+        <div>
+            <label>Name:</label>
+            <input type="text" placeholder="Enter Name">
+        </div>
+        <br>
+        <div>
+            <label>Password:</label>
+            <input type="password" placeholder="Enter Password">
+        </div>
+        <br>
+        <div>
+            <label>Numeric value:</label>
+            <input type="number" placeholder="Enter numeric value">
+        </div>
+        <br>
+        <div>
+            <label>Dob:</label>
+            <input type="date">
+        </div>
+        <br>
+        <div>
+            <label>Qualification:</label>
+            <select>
+                <option value="101">B.Tech</option>
+                <option value="102">M.Tech</option>
+                <option value="103">BSC</option>
+                <option value="104">MSC</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>Gender:</label>
+            <input type="radio" name="gender"> <label>Male</label> 
+            <input type="radio" name="gender"> <label>Female</label>
+        </div>
+        <br>
+        <div>
+            <label>Address:</label>
+            <textarea placeholder="Enter Address"></textarea>
+        </div>
+        <br>
+        <div>
+            <label>Upload File:</label>
+            <input type="file">
+        </div>
+        <br>
+        <div>
+            <label>Time:</label>
+            <input type="time">
+        </div>
+        <br>
+        <div>
+            <input type="checkbox"> <label> I Accept terms and conditions</label>
+        </div>
+        <br>
+        <div>
+            <input type="button" value="Click">
+            <button type="button">Click me</button>
+            <input type="submit" value="Sign Up">
+            <button type="submit">Register</button>
+            <button type="reset">Clear form data</button>
+        </div>
+
+
+    </form>
+</body>
+
+</html>
+
+
+<video controls width="" height="">
+        <source src=""  type="video/mp4">
+    </video>
+
+<audio controls>
+        <source src=""  type="audio/mp3">
+    </audio>
+<audio controls loop autoplay>
+        <source src=""  type="audio/mp3">
+    </audio>
+
+
+iframe: to display the content of other web page into our page
+mypage.html
+
+demo.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+

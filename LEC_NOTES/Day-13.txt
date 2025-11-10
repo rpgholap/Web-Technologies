@@ -1,0 +1,4 @@
+MVC Design Pattern
+Model : Representation of the data, class, interface
+View : UI
+Controller : a logic where request and response are processed

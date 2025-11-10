@@ -1,0 +1,226 @@
+Morning session:
+
+display: inline prevents the div to get the custom width and height
+
+
+
+JavaScript:
+To execute logics on the browser
+
+
+with html and css the page will be static only
+
+For JS everything is an object: including ui elements, and values which are in js logic 
+
+<script>
+
+</script>
+
+document: it is an implicit object (already defined and developer need not to define it manually) that represents the entire web page
+
+using document object we can perform any operation on the web page
+
+document.write("hello world")
+
+document.write("hello world");
+        document.write("<h1>Heading text</h1>");
+
+
+every browser comes with a JS engine i.e. the interpreter for the js code 
+chrome: V8 engine
+mozilla: spider monkey engine
+
+
+11 am Session:
+
+
+document -> object of web page
+console -> object of console 
+
+window -> window object will point to browser's window
+
+window.alert(msg)
+alert(msg) because this alert will be referred by window object automatically by interpreter
+
+
+variables and data types:
+
+1 a=5;
+2 b="hello";
+3 a="bye";
+4 a=6;
+
+JS is not type safe language, but for the development purpose we have to get the type safety and this will be achieved by TypeScript
+ TS:
+var a:string = "hello"
+var b:number = 6;
+
+in JS we don't have specific int or float types we only have a number type
+
+
+ a=6;
+        b="hello";
+        console.log(a); 
+        console.log(typeof a); // number
+        console.log(b);
+        console.log(typeof b); // string
+
+
+a=6;
+        b="hello";
+        console.log(a,b);
+
+a=6;
+        b="hello";
+        console.log("value of a = "+a);
+
+ a=6;
+        b="hello";
+        c=true
+        console.log("value of a = "+a);
+        console.log(c, typeof c);
+
+operators:
+
+arithmetic : + - * / %
+
+a=4;
+        b=5;
+        c=a+b;
+        console.log(c);
+
+sum of 4 and 5 is 9
+
+a=4;
+        b=5;
+        c=a+b;
+        // msg = "sum of "+a+" and "+b+" is "+c;
+        msg = `sum of ${a} and ${b} is ${c}`;
+        console.log(msg);
+
+In JS there is no char data type 
+all the text values are string only
+
+"" `` ''
+a = 'hello'
+b = "hello"
+c = `hello`  with back ticks only `` we can use ${}
+
+relational operators: 
+< > <= >= == != 
+=== 1. value should be equal
+    2. type should be same 
+!==
+
+And Or Not
+&& || !
+
+=, +=, -=, *=, /=, %=
+
+
+ternary operator
+? :
+
+c = condition ? value 1 : value 2
+
+ a=5;
+        b=7;
+        c = a>b?a:b;
+
+
+control structures:
+decides the way of execution of statements
+
+1. Sequential
+2. Conditional : statements will be executed based on condition, if condition is true then only code will be executed
+
+if, if else, if else if, switch case, nested if 
+
+3. Loops: to repeat the statements multiple times 
+
+for , while, do while, foreach 
+
+
+ num = -2;
+        if(num>=0){
+            console.log("number is +ve");
+        }
+        else{
+            console.log("number is -ve");
+        }
+
+
+marks 
+
+91 - 100 A+
+81 - 90 A
+71 - 80 B+
+
+<=70 fail
+
+102 -> Pappu
+103 -> Gappu
+104 -> Tappu
+roll = 109;
+
+        switch(roll){
+            case 102: console.log("pappu"); break;
+            case 103: console.log("gappu"); break;
+            case 104: console.log("tappu"); break;
+            default: console.log("not found");
+        }
+
+roll = 10;
+
+        if(roll === 102){
+            console.log("Pappu");
+        }
+        else if(roll === 103){
+            console.log("Gappu");
+        }
+        else if(roll === 104){
+            console.log("Tappu");
+        }
+        else{
+           console.log("not found"); 
+        }
+
+
+loops:
+
+while loop
+
+while(condition){
+	body
+}
+
+num = 1;
+        while(num<=5){
+            console.log(num);
+            num++;
+        }
+
+** .... *
+** .... *
+console.log(*)
+
+
+
+for(i=1;i<=1000;i++){
+	for(j=1;j<=100;j++){
+	console.log(*)	
+}
+}
+
+i=1 j=1 2 3 4 ... 100
+
+
+
+
+
+
+
+
+
+
+

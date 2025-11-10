@@ -1,0 +1,185 @@
+package.json -> npm init --y
+type: module
+
+index.js -> create server and start it
+
+import 
+
+3rd party module
+
+predefined: node js
+user defined: developer
+3rd party module: module given by another organization
+we have manually have to download and install it
+
+npm install module-name
+npm i module-name
+
+npm install express
+npm i express
+npm i mysql2
+
+npm i module-name1 module-name2 module-name3 
+
+there are two types of 3rd party modules:
+
+1. local module: installed specifically inside of a project
+	
+	p1 p2 p3 
+	
+if a module is providing predefined code base like functions, properties, classes then we must have to install it locally
+
+when any module is installed locally then all its related folder and files will be stored inside node_modules
+
+local module can be referred as dependency
+
+when any dependency/local module is installed then its name with version will go inside the package.json file in the dependencies key 
+
+and whenever we are moving the project folder or pushing the project on the git so we don't need to take node_modules folder due to its large content, simply take the project without node_modules folder and just hit 'npm i' command, and this command will look into package.json file and install all the mentioned dependencies
+
+
+2. global module: not installed specifically inside of a project, installed in the system directly 
+
+	npm i module-name -g 
+	
+        npm i nodemon -g
+
+localhost:5000
+
+urls
+base url: www.makemytrip.com
+sub-url : www.makemytrip.com/login
+		www.makemytrip.com/profile   www.makemytrip.com/trains    www.makemytrip.com/flights
+
+routing: defining the mapping like how we have to process the urls
+
+
+app.get(url1,(req,res)=>{
+
+});
+
+
+app.get(url2,(req,res)=>{
+
+});
+
+app.post(url,(req,res)=>{
+
+})
+
+app.put()
+app.delete()
+
+
+import express from 'express';
+
+const app = express(); // create an express application and this will act as a server
+
+app.get("/",(request,response)=>{
+    response.send("hello welcome to home");
+});
+
+app.get("/login",(request,response)=>{
+    response.send("this is login response");
+});
+
+app.get("/sum",(request,response)=>{
+    var x = 3;
+    var y = 5;
+    var z = x + y;
+    response.send("sum is "+z)
+});
+
+app.listen(5500);
+
+
+
+how to pass data from client to server:
+
+1. we can pass data on the url
+
+localhost:5500/sum/3/5 -> url parameter
+
+localhost:5500/factorial/4 
+
+
+if data is sensitive then we can't send it on the url then in this case request body will be used
+
+2 ways of sending data from client to server:
+1. url parameter
+2. request body, will not work with GET request method, can work with post method
+
+
+
+
+import express from 'express';
+
+const app = express(); // create an express application and this will act as a server
+
+app.get("/", (request, response) => {
+    response.send("hello welcome to home");
+});
+
+app.get("/login", (request, response) => {
+    response.send("this is login response");
+});
+
+// /sum/3/5
+app.get("/sum/:a/:b", (request, response) => {
+    // {a: 3, b:5}
+    const n1 = parseInt(request.params.a);
+    const n2 = parseInt(request.params.b);
+    const n3 = n1 + n2;
+    response.send({ sum: n3 })
+});
+
+app.get("/factorial/:num", (request, response) => {
+    try {
+        const value = parseInt(request.params.num);
+        if (value <= 0) {
+            response.status(400).send({ message: 'Invalid value given' })
+        }
+        else {
+            var f = 1;
+            for (var i = 1; i <= value; i++) {
+                f = f * i;
+            }
+            response.status(200).send({ factorial: f });
+        }
+    } catch (error) {
+        response.status(500).send({ message: 'Something went wrong' })
+    }
+
+
+});
+
+
+app.listen(5500);
+
+
+
+
+
+
+by default express js doesn't process the request body
+we have to manually enable it to process the request body
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,118 @@
+https://css-tricks.com/almanac/properties/
+
+
+https://paletton.com/#uid=10h0u0kllllaFw0g0qFqFg0w0aF
+
+https://fonts.google.com/
+
+
+
+
+create database sparepartsInventary;
+use sparepartsInventary;
+
+create table roleTable(
+role_id int primary key,
+role_name varchar(200) not null
+);
+
+create table users (
+	user_id int primary key,
+	role_id int,
+	name varchar(200) not null,
+	email varchar(100) unique not null,
+	password varchar(300) not null,
+	phone varchar(100),
+	state varchar(100),
+	city varchar(100),
+	createdAt date,
+	updatedAt date,
+	foreign key(role_id) references roleTable(role_id),
+	isActive Boolean
+);
+
+create table suppliers(
+	supplier_id int primary key,
+	supplier_name varchar(200) not null,
+	email varchar(100) unique not null,
+	password varchar(300) not null,
+	role_id int,
+	phone varchar(100),
+	state varchar(100),
+	city varchar(100),
+	createdAt date,
+	updatedAt date,
+	foreign key(role_id) references roleTable(role_id),
+	isActive Boolean
+);
+
+create table admin(
+	admin_id int primary key,
+	role_id int,
+	admin_name varchar(200) not null,
+	email varchar(100) unique not null,
+	password varchar(300) not null,
+	phone varchar(100),
+	foreign key(role_id) references roleTable(role_id),
+	isActive Boolean
+);
+
+
+create table spareParts(
+	sparePart_id int primary key,
+	supplier_id int,
+	sparePartName varchar(200) not null,
+	sparePartType varchar(200),
+	quantityInStock int,
+	category varchar(200),
+	modelType varchar(200),
+	brand varchar(200),
+	price long,
+	description varchar(500), 
+	partImage varchar(200),
+	foreign key(supplier_id) references suppliers(supplier_id)
+);
+
+create table orders(
+orderId int primary key,
+user_id int,
+orderDate date,
+status varchar(100),
+foreign key(user_id) references users(user_id)
+);
+
+create table orderDetails(
+orderDetailsID int primary key,
+orderId int,
+sparePart_id int,
+status varchar(100),
+quantity int,
+price long,
+foreign key(orderId) references orders(orderId),
+foreign key(sparePart_id) references spareParts(sparePart_id)
+);
+
+create table InventoryManagement(
+transactionID int primary key,
+orderDetailsID int,
+sparePart_id int,
+remainingStock int, 
+updatedAt date,
+transactionType varchar(200), 
+foreign key(orderDetailsID) references orderDetails(orderDetailsID),
+foreign key(sparePart_id) references spareParts(sparePart_id)
+);
+
+
+
+
+INSERT INTO roleTable (role_id, role_name) VALUES
+(1, 'Admin'),
+(2, 'Supplier'),
+(3, 'User');
+
+
+INSERT INTO admin (admin_id, role_id, admin_name, email, password, phone, isActive) VALUES
+(1, 1, 'Pratik Avhad', 'pratik.admin@gmail.com', 'admin@123', '9999911111', true),
+(2, 1, 'Apurva Dhonde', 'apurva.admin@gmail.com', 'admin@456', '9999922222', true),
+(3, 1, 'Rutuja Gholap', 'rutuja.admin@gmail.com', 'admin@789', '9999933333', true);

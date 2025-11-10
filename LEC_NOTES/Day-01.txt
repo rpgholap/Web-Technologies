@@ -1,0 +1,227 @@
+Applications
+
+Types of apps:
+
+1. Desktop Apps: directly installed on the system
+
+2. Mobile Apps: 
+
+3. Web Apps/ website:doesn't need any installation we need internet, browser
+
+Web apps architecture:
+
+Client: web browser
+
+Server: system that will contain the entire application and its data 
+
+end users
+
+client will send a request on the server
+server will accept the request
+server will process the request
+server will send response to the client
+client will receive the response and display on the browser
+
+Properties for Request and Response:
+
+Request:
+1. We need ip address of the server to send the request
+	domain name/url -> ip address
+
+2. Request Method: method will specify that for what purpose the request has been sent
+	GET, POST, PUT, DELETE, PATCH
+
+Response:
+
+1. Status : state of current request processing
+   status code is going to be a numeric value
+   status message will be also there
+  
+	status code + status message = status
+	
+  2XX -> 200 OK, 201, 202, 203, 204....299
+  3XX -> 300, 301, 302, .... 399 Redirection
+  4XX -> 400, 401, 402, 403, 404,... 499
+  5XX -> 500, 501, ... 599
+	
+200 Ok -> successful operation
+in case of error, check for the reason:
+1. due to fault of client -> 4XX, 404 Not Found, 400 bad request
+2. due to fault of server -> 5XX
+
+2. Response Data
+
+
+How to develop web apps:
+
+1. Frontend: UI 
+	HTML: creating structure of a web page
+ 	CSS: is for styling of the web page
+        JS: is for client side scripting, executing logics in the browser
+       	JQUERY: library for JS 
+        Bootstrap, MUI, tailwind css: Responsive
+        React js: is library to develop frontend 
+
+2. Backend: server : Processing + DATABASE
+
+Operations/Processing: JavaScript, Express js is a library to develop server 
+Node JS is not a library, it is a runtime env on which we can run js code
+
+Database: store the data
+MySQL, oracle, sql server, mongo db, Cassandra 
+
+MERN Stack: MySQL/Mongo Express React Node
+
+
+
+frontend processing backend
+
+
+sign up/user registration flow
+
+
+Frontend: display the form with input fields
+
+on click of submit button request should go on the server and form data should be submitted onto the server
+
+Server: server is going to read the form data from incoming request 
+	server will insert the data into database 
+	on successful insertion in the db
+	send response with status 200 
+
+search field
+
+
+Frontend:
+
+HTML: Hyper Text Markup Language
+
+HTML is for creating skeleton of a web page
+Using HTML we can display things on a web page
+
+Scripting lang: no compiler JS, PHP
+Programming lang: compile C, C++, Java
+
+Markup lang: We can't write logics with markup langs
+             1. store the data -> XML -> to store the configs 
+             2. display the data -> HTML
+
+HTML syntax: we have to make use of tags only
+
+<tag-name> opening tag
+
+</tag-name> closing tag
+
+types of tags:
+1. empty tag -> opening only 
+2. container tag -> opening and closing both 
+
+HTML provides the predefined tags only 
+HTML is not case sensititve
+extension will be .html .htm
+html code will be read by browser and by reading the html code browser will display the data accordingly
+HTML is error free lang
+
+
+<html>
+	<head>
+		<title>My first page</title>
+	</head>
+	<body>
+		<p>Hello world</p>
+	</body>
+</html>
+
+bydefault everything will be auto aligned at the left side 
+
+to customize a tag we are getting several properties/attributes 
+eg: <p align="center">Hello world</p>
+
+headings : 6 tags
+h1, h2, h3, h4, h5, h6
+
+images:
+<img src=""> opening tag only
+
+file source: 
+2 types of paths are there
+1. absolute path -> D:\cdac-14-oct\oct-14-evening\photo.png
+2. relative path -> photo.png
+
+
+<img src="../images/photo.png">  ../ is to come out of current folder
+
+display the links:
+
+anchor tag <a>text</a>
+
+<a href="https://www.flipkart.com">Visit Flipkart</a>
+
+<a href="https://www.flipkart.com" target="_blank">Visit Flipkart</a>  to open link in a new tab
+
+superscript & subscript
+
+<sup></sup>
+<sub></sub>
+
+<p>(a+b)<sup>2</sup></p>
+<p>H<sub>2</sub>O</p>
+
+<br> for line break
+
+list:
+series of items
+
+types of list:
+1. ordered list: labels are going to follow either numeric sequence or alphabetic sequence
+	<ol></ol>
+
+<ol>
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ol>
+<ol type="a">  1, a, A, i, I
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ol>
+
+<ol type="a" start="4">
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ol>
+
+2. unordered list:
+
+   <ul type="circle"> disc | square | circle
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

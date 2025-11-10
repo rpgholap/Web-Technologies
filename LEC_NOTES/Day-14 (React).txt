@@ -1,0 +1,58 @@
+React JS:
+developing the frontend of web app
+created by Facebook
+Single Page Application: only one html file/page is created 
+component based architecture
+
+school website
+
+Home.html -> navbar -> 40 lines html code
+About.html -> navbar -> 40 lines html code
+Gallery.html
+Admissions.html
+Contact.html
+
+50+ pages
+
+1. in core HTML, the html code is not reusable
+2. Load time is larger, due to the browser reloading
+
+
+In React JS, instead of creating web pages, we have to create components
+Component: ui element 
+
+vite
+
+step 1 :npm create vite@latest app-name
+
+step 2: install dependencies: npm i
+
+step 3: run app: npm run dev
+
+when we create any react app, one component is already created, and when this react app is launched then the already created component is displayed 
+
+App.js or App.jsx
+
+How to create a component:
+
+In react js there are two types of component
+1. class component : for creating any ui element/component if class is used 
+
+2. function component : for creating any ui component if directly function will be defined 
+			these are the light weight 
+
+
+
+
+JSX: JavaScript And XML : it enables the developer to write js code along with html code directly
+
+
+
+
+
+
+
+
+
+
+

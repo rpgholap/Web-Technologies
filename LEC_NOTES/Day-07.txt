@@ -1,0 +1,318 @@
+var, let, const
+
+console.log(a)
+a=6
+
+Uncaught ReferenceError: a is not defined
+    at web.html:10:21
+
+console.log(a); // undefined
+var a=6;
+
+here browser will not give any kind of error
+
+hoisting: before execution of js code, browser will read the entire code and will place all the declarations at the top of the code 
+
+var a = 7;
+
+var a = 6;
+
+using var keyword we can redeclare a variable
+
+function show(){
+            if(true){
+                var a = 4;
+                console.log("inside if a=", a); // 4
+            }
+            console.log("outside if a=", a); // 4
+        }
+        show();
+
+
+let: block scoped variables
+
+function show(){
+            if(true){
+                let a = 4;
+                console.log("inside if a=", a); // accessible
+            }
+            console.log("outside if a=", a); // not accessible
+        }
+        show();
+
+
+console.log(a);
+        let a = 4;
+
+for let variables hoisting is there but we can't access let variables before initialization
+
+let a = 5;
+        console.log(a);
+
+        let a = 6;
+
+we cannot redeclare the let variables
+
+const: it is same as let keyword but only a difference is there that we can't update the value of const variables
+
+const a = 5;
+
+a=6;
+
+for JS everything will be considered as an object, so functions are also considered as objects 
+
+var a = 5;
+var str = "hello";
+
+
+
+
+
+function show(){
+            console.log("hello world");
+        }
+
+        var obj = show;
+        console.log(obj);
+
+here the entire function definition for the show will be assigned into obj reference and on the console the entire definition will be logged
+
+
+obj();
+ 
+
+
+var obj = function show(){
+            console.log("hello world");
+        }
+        console.log(obj);
+ 
+a function without a name is called anonymous function:
+
+var obj = function(){
+            console.log("hello world");
+        }
+        console.log(obj);
+
+var sum = function(a,b){
+            return a+b;
+        }
+
+        console.log(sum);
+        var rs = sum(4,5);
+        console.log(rs);
+
+callback function:
+
+a function that is passed in the argument of another function
+
+function show(arg){
+            console.log(arg);
+            arg();
+        }
+
+        function demo(){
+            console.log("inside demo function");
+        }
+
+        show(demo); // demo is a callback function 
+
+
+function show(arg){
+            console.log(arg);
+            arg();
+        }
+
+    
+        show(function(){
+            console.log("inside demo function");
+        }); // demo is a callback function 
+
+arrow function:
+
+var myFunc = (arguments) => {
+  body
+}
+
+function show(){
+	console.log("hello world");
+}
+
+
+
+var show = () => {
+	console.log("hello world");
+}
+
+show();
+
+var sum = (a,b) => a+b;
+
+         var rs = sum(3,6);
+         console.log(rs);
+
+var increment = a => a+5;
+
+         var rs = increment(3)
+         console.log(rs);
+
+
+
+
+array operations:
+
+var arr = [10,20,33,44,56,12,11,13,15,16,18,17];
+
+       arr.forEach((value, index)=>{
+        console.log(value, index);
+       })
+
+var evenArray = [];
+
+ var arr = [10, 20, 33, 44, 56, 12, 11, 13, 15, 16, 18, 17];
+        var evenArray = [];
+
+        arr.forEach((value, index) => {
+            if(value % 2 === 0){
+                evenArray.push(value);
+            }
+        })
+
+        console.log(evenArray);
+
+var arr = [10, 20, 33, 44, 56, 12, 11, 13, 15, 16, 18, 17];
+        
+var evenArr = arr.filter(value => value % 2 === 0);
+
+console.log(evenArr);
+
+
+map function :
+
+var arr = [10, 20, 33, 44, 56, 12, 11, 13, 15, 16, 18, 17];
+        
+        var newArr = arr.map(value => 2 * value);
+
+        console.log(newArr);
+
+reduce function:
+
+callback functions:
+
+there are two types of process:
+
+1. synchronous: blocking nature
+
+	sum(2,3) 2 sec
+	fact() 4 sec
+	square() 1 sec
+
+2. asynchronous:
+    non blocking nature
+
+   p1 p2 p3 p4
+
+to make any operation asynchronous callback functions will be used 
+
+setTimeout(task, time)
+
+
+setTimeout(()=>{
+            console.log("inside callback of settimeout");
+        }, 2000);
+        
+        console.log("hello world");
+
+output:
+
+Hello World
+Inside.....
+
+
+Note: callback function never executes immediately, it will wait for any event to occur and then the callback function will be executed and till that event the next operations will not be blocked 
+
+console.log("started addition....");
+        setTimeout(()=>{
+            var a = 2;
+            var b = 3;
+            var c = a + b;
+            console.log("sum is", c);
+        }, 2000);
+
+
+        console.log("started finding factorial....");
+        setTimeout(()=>{
+            var num = 5;
+            var f = 1;
+            for(var i = 1; i <=num; i++ ){
+                f = f * i;
+            }
+            console.log("factorial is",f);
+        },4000);
+
+        console.log("started calculating square....");
+        setTimeout(()=>{
+            var num = 8;
+            var sq = num * num;
+            console.log("square is",sq);
+        },1000);
+
+
+sum fact and square by default they are async
+
+sum(2,3) 2
+fact(5) 4
+square() 1
+
+
+read data from database      fetchDataFromDb(()=>{
+				
+				writeFile(()=>{
+						sendResponse();
+					})
+				})
+write that data into file    
+send response to the client  
+
+console.log("started addition....");
+        setTimeout(() => {
+            var a = 2;
+            var b = 3;
+            var c = a + b;
+            console.log("sum is", c);
+            console.log("started finding factorial....");
+            setTimeout(() => {
+                var f = 1;
+                for (var i = 1; i <= c; i++) {
+                    f = f * i;
+                }
+                console.log("factorial is", f);
+                console.log("started calculating square....");
+                setTimeout(() => {
+                    var sq = f * f;
+                    console.log("square is", sq);
+                }, 1000);
+            }, 4000);
+        }, 2000);
+
+whenever we want to make multiple async operations running in sync way then we have to go into nesting of the callback functions 
+
+nesting of the callback functions is known as callback hell
+we always have to prevent callback hell
+
+Promise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
