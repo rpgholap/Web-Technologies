@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="fetchData()">Fetch Data</button>
+    <table  border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    <script>
+        function fetchData() {
+            var xhr = new XMLHttpRequest(); // step 1
+            xhr.open('GET', "https://jsonplaceholder.typicode.com/users"); // step 2
+            xhr.send(); // step 3
+            
+            xhr.onreadystatechange = () => {
+                // this will be called everytime when ready state change event will be fired
+                if(xhr.readyState === 4){
+                    var responseData = JSON.parse(xhr.responseText);
+                    // console.log(responseData);
+
+                    var tbody = document.getElementById("table-body");
+
+                    for (const user of responseData) {
+                        const {id, name, phone, username, email} = user;
+                        var row = `<tr>
+                                <td>${id}</td>
+                                <td>${name}</td>
+                                <td>${phone}</td>
+                                <td>${username}</td>
+                                <td>${email}</td>
+                            </tr>`
+                            tbody.innerHTML = tbody.innerHTML + row;
+                        // var tr = document.createElement("tr");
+
+                        // var idColumn = document.createElement("td");
+                        // var nameColumn = document.createElement("td");
+                        // var phoneColumn = document.createElement("td");
+                        // var usernameColumn = document.createElement("td");
+                        // var emailColumn = document.createElement("td");
+
+                        // idColumn.innerHTML = user.id;
+                        // nameColumn.innerHTML = user.name;
+                        // phoneColumn.innerHTML = user.phone;
+                        // usernameColumn.innerHTML = user.username;
+                        // emailColumn.innerHTML = user.email;
+
+                        // tr.appendChild(idColumn);
+                        // tr.appendChild(nameColumn);
+                        // tr.appendChild(phoneColumn);
+                        // tr.appendChild(usernameColumn);
+                        // tr.appendChild(emailColumn);
+
+                        // tbody.appendChild(tr);
+
+                    }
+
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

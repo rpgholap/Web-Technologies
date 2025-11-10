@@ -1,0 +1,70 @@
+Senario:
+School Website
+Home.html  --> navbar --> 40 lines of code 
+About.html --> navbar --> 40 lines of code 
+Gallay.html
+Admissions.html
+contact.html
+
+so there is no code reusablitity in html.
+if you have 50+ pages then if we want navbar to all pages we have to right it in all pages
+- No code reusablitity
+- increase lines of code
+- load time is larger, due to the brower reloading 
+
+--> react overcomes above problems 
+
+=======================================================================================================================
+
+
+React JS:
+- Developing the frontend of web page
+- it is a library
+- developed by facebook
+- fb, meta, insta, wp all under react 
+- with the help of react we develope Single page application
+- single page application means 
+    --> we need not to reload brower  
+    --> only one html file created throughout the application
+    --> based on URL it will render but page layout will be same but content changes 
+- we gonna create components instead of webpages
+- components: ui elements --> heading, checkbox, buttons, paragraph, tr, table, form etc  
+- we are not creating pages here 
+- component can be made up of multiple components/ ui elements or automic as well like only button
+- React is following component- based architechture 
+
+
+Vite:
+- used to create react application
+- generates a file structure with dependencies 
+npm create vite@latest app_name;
+
+cd app_name
+npm i
+npm install
+npm run dev
+
+when we create any react app, one component is already created, 
+and when this react app is launched then the already created component 
+is displayed.
+
+App.js or App.jsx
+
+
+How to create a component:
+1. class component: for creating any ui element or component if class is used  --> can use oop
+2. function component: for creating any ui element if directly function will be defined 
+    --> these are the light weight 
+
+    for component --> best practice to give jsx extension
+
+when we have more ui component to export then do not use default like export default class_name
+      export class extends component{}
+
+if we have one component then we can use default 
+     export default class_name
+
+
+JSX:
+Javascript and XML
+- it enables the developer to write js code along with html code 

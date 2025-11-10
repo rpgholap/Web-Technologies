@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var isLoggedInFlag = localStorage.getItem("isLoggedIn");
+        if(!isLoggedInFlag){
+            location.href = "login.html"
+        }
+    </script>
+</head>
+<body>
+    <h1> Welcome to home page</h1>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        function logout(){
+            localStorage.removeItem("isLoggedIn");
+            location.href="login.html";
+        }
+    </script>
+</body>
+</html>

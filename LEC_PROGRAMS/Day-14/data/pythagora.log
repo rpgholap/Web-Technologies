@@ -1,0 +1,76 @@
+2025-10-30T12:59:55.680Z INFO SharedStateManager initialized
+2025-10-30T12:59:55.681Z INFO Is remote: false
+2025-10-30T12:59:55.682Z INFO Starting Local. Installation path: e:\CDAC PREP 2025\CDAC\WPT
+2025-10-30T12:59:55.683Z INFO [MainProvider] Creating new MainProvider instance...
+2025-10-30T12:59:55.685Z INFO Installation path exists: e:\CDAC PREP 2025\CDAC\WPT
+2025-10-30T12:59:55.685Z INFO Initializing database with URL: file:e:\CDAC PREP 2025\CDAC\WPT\pythagora-core\data\database\pythagora.db
+2025-10-30T12:59:55.690Z INFO Database file exists, skipping prisma generate/push for faster startup
+2025-10-30T12:59:55.691Z INFO Database initialized successfully
+2025-10-30T12:59:55.692Z INFO [Migration] Checking for database migration...
+2025-10-30T12:59:56.136Z INFO [Migration] No migration needed
+2025-10-30T15:03:05.944Z ERROR axios failed after all retries:
+Error: Request failed with status code 504
+Stack: AxiosError: Request failed with status code 504
+    at settle (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\node_modules\axios\dist\node\axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\node_modules\axios\dist\node\axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\node_modules\axios\dist\node\axios.cjs:4258:41)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\services\authService.js:19:67
+    at withRetry (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\utils\axios.js:22:20)
+    at Object.refreshTokens (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\services\authService.js:19:26)
+    at Timeout._onTimeout (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\extension.js:283:13)
+Extra context: {
+  "code": "ERR_BAD_RESPONSE",
+  "message": "Request failed with status code 504"
+}
+2025-10-30T15:03:06.007Z ERROR Token refresh failed:
+Error: Request failed with status code 504
+Stack: AxiosError: Request failed with status code 504
+    at settle (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\node_modules\axios\dist\node\axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\node_modules\axios\dist\node\axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\node_modules\axios\dist\node\axios.cjs:4258:41)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\services\authService.js:19:67
+    at withRetry (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\utils\axios.js:22:20)
+    at Object.refreshTokens (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\services\authService.js:19:26)
+    at Timeout._onTimeout (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\extension.js:283:13)
+Extra context: {
+  "code": "ERR_BAD_RESPONSE",
+  "message": "Request failed with status code 504"
+}
+2025-10-30T15:41:30.630Z INFO Closing entire Pythagora extension...
+2025-10-30T15:41:30.686Z ERROR Error closing extension
+Error: Canceled
+Stack: Canceled: Canceled
+    at new MR (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116391)
+    at U4.U (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:121001)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:118495)
+    at iy.g (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:41101)
+    at iy.executeCommand (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:40605)
+    at Object.executeCommand (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:201:105071)
+    at closeEntirePythagoraExtension (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\extension.js:390:31)
+    at Object.deactivate (c:\Users\OFFICE\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.5.24\out\extension.js:295:15)
+    at SZ.eb (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:11797)
+    at file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9947
+    at Array.map (<anonymous>)
+    at SZ.$ (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:9935)
+    at SZ.terminate (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:118:10178)
+    at H3.terminate (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:120:914)
+    at Ss (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:10409)
+    at MessagePortMain.<anonymous> (file:///c:/Users/OFFICE/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:393:6948)
+    at MessagePortMain.emit (node:events:519:28)
+    at MessagePortMain.emit (node:domain:489:12)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+    at Object.topLevelDomainCallback (node:domain:161:15)
+    at Object.callbackTrampoline (node:internal/async_hooks:128:24)
+Extra context: {
+  "message": "Canceled"
+}

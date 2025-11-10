@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Practice</title>
+  </head>
+  <body>
+    <script>
+      // document object examples
+      document.write("Hello World<br>");
+      document.write("<h3>Heading text</h3>");
+
+      // variables and data types
+      let a = 6;
+      let b = "hello";
+      console.log(a);
+      console.log(typeof a);
+      console.log(b);
+      console.log(typeof b);
+
+      // string
+      a = 4;
+      b = 5;
+      let c = a + b;
+      let msg = `Sum of ${a} and ${b} is ${c}`;
+      console.log(msg);
+
+      // boolean and typeof
+      a = 6;
+      b = "hello";
+      let d = true;
+      console.log("Value of a = " + a);
+      console.log(d, typeof d);
+
+      // relational and logical operators
+      a = 10;
+      b = 20;
+      console.log(a < b);
+      console.log(a == "10");
+      console.log(a === "10");
+      console.log(!(a > b));
+
+      // ternary operator
+      a = 5;
+      b = 7;
+      c = a > b ? a : b;
+      console.log("Greater value is:", c);
+
+      // conditional statements
+      let num = -2;
+      if (num >= 0) {
+        console.log("Number is +ve");
+      } else {
+        console.log("Number is -ve");
+      }
+
+      // grading system
+      let marks = 85;
+      if (marks >= 91 && marks <= 100) {
+        console.log("Grade: A+");
+      } else if (marks >= 81 && marks <= 90) {
+        console.log("Grade: A");
+      } else if (marks >= 71 && marks <= 80) {
+        console.log("Grade: B+");
+      } else {
+        console.log("Grade: Fail");
+      }
+
+      // switch case
+      let roll = 109;
+      switch (roll) {
+        case 102:
+          console.log("Pappu");
+          break;
+        case 103:
+          console.log("Gappu");
+          break;
+        case 104:
+          console.log("Tappu");
+          break;
+        default:
+          console.log("Not Found");
+      }
+
+      // if-else alternative
+      roll = 103;
+      if (roll === 102) {
+        console.log("Pappu");
+      } else if (roll === 103) {
+        console.log("Gappu");
+      } else if (roll === 104) {
+        console.log("Tappu");
+      } else {
+        console.log("Not Found");
+      }
+
+      // while loop
+      num = 1;
+      while (num <= 5) {
+        console.log(num);
+        num++;
+      }
+
+      // pattern using *
+      console.log("Pattern using *");
+      for (let i = 1; i <= 5; i++) {
+        let stars = "";
+        for (let j = 1; j <= i; j++) {
+          stars += "*";
+        }
+        console.log(stars);
+      }
+
+      // nested loops example
+      console.log("Nested Loop Example");
+      for (let i = 1; i <= 3; i++) {
+        for (let j = 1; j <= 5; j++) {
+          console.log(`i=${i}, j=${j}`);
+        }
+      }
+
+      // arithmetic operations
+      a = 10;
+      b = 3;
+      console.log("Addition:", a + b);
+      console.log("Subtraction:", a - b);
+      console.log("Multiplication:", a * b);
+      console.log("Division:", a / b);
+      console.log("Modulus:", a % b);
+
+      // for loop 1 to 10
+      for (let i = 1; i <= 10; i++) {
+        console.log("Number:", i);
+      }
+    </script>
+  </body>
+</html>
