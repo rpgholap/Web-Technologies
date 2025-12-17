@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter Phone" id="phone-field">
+        <br><br>
+        <input type="password" placeholder="Enter Password" id="password-field">
+        <br><br>
+        <input type="button" value="Login" onclick="login()">
+        <h4 id="login-error"></h4>
+    </form>
+
+    <script>
+        function login(){
+            var phone = document.getElementById("phone-field").value;
+            var password = document.getElementById("password-field").value;
+            var storedPhone = localStorage.getItem("phone");
+            var storedPassword = localStorage.getItem("password");
+            if(phone === storedPhone && password === storedPassword){
+                location.href = "home.html"
+                localStorage.setItem("isLoggedIn","true");
+            }
+            else{
+                document.getElementById("login-error").innerHTML = "Invalid Credentials";
+            }
+        }
+    </script>
+</body>
+</html>

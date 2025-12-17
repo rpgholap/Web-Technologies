@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini - Luxury Supercars | Official Website</title>
+    <meta name="description" content="Explore the world of Lamborghini luxury supercars. Discover our latest models, technology, and Italian excellence.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header" data-testid="header-main">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" data-testid="link-logo">
+                    <span class="logo-text">LAMBORGHINI</span>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-link active" data-testid="link-home">Home</a>
+                    <div class="nav-dropdown" data-dropdown>
+                        <button class="nav-link dropdown-trigger" data-dropdown-trigger data-testid="button-models">
+                            Models <span class="arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" data-dropdown-menu>
+                            <a href="#revuelto" class="dropdown-item" data-testid="link-revuelto">Revuelto</a>
+                            <a href="#huracan" class="dropdown-item" data-testid="link-huracan">Huracán</a>
+                            <a href="#urus" class="dropdown-item" data-testid="link-urus">Urus</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link" data-testid="link-about">About</a>
+                    <a href="contact.html" class="nav-link" data-testid="link-contact">Contact</a>
+                    <a href="signin.html" class="nav-link" data-testid="link-signin">Sign In</a>
+                    <a href="signup.html" class="nav-link btn-primary" data-testid="button-signup">Configure</a>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" data-testid="button-menu-toggle">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" data-testid="section-hero">
+        <div class="hero-video">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-testid="text-hero-title">FEEL THE ROAR</h1>
+            <p class="hero-subtitle" data-testid="text-hero-subtitle">Experience Italian Excellence</p>
+            <div class="hero-buttons">
+                <a href="#models" class="btn btn-primary" data-testid="button-explore-models">Explore Models</a>
+                <a href="contact.html" class="btn btn-outline" data-testid="button-contact-dealer">Contact Dealer</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-testid="icon-scroll">
+            <span>Scroll</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Scrolling Text -->
+    <div class="scrolling-text-container" data-testid="section-scrolling-text">
+        <div class="scrolling-text">
+            <span>POWER • SPEED • LUXURY • INNOVATION • PERFORMANCE • ITALIAN DESIGN • </span>
+            <span>POWER • SPEED • LUXURY • INNOVATION • PERFORMANCE • ITALIAN DESIGN • </span>
+        </div>
+    </div>
+
+    <!-- Models Section -->
+    <section class="section models-section" id="models" data-testid="section-models">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-testid="text-models-title">Our Models</h2>
+                <p class="section-description" data-testid="text-models-description">Discover the most powerful and luxurious supercars in the world</p>
+            </div>
+
+            <div class="models-grid">
+                <div class="model-card" id="revuelto" data-testid="card-model-revuelto">
+                    <div class="model-image">
+                        <div class="model-placeholder" style="background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);">
+                            <span class="model-name-overlay">REVUELTO</span>
+                        </div>
+                    </div>
+                    <div class="model-content">
+                        <h3 class="model-name" data-testid="text-revuelto-name">Revuelto</h3>
+                        <p class="model-description" data-testid="text-revuelto-description">The first HPEV (High Performance Electrified Vehicle). 1015 CV of maximum power.</p>
+                        <div class="model-specs">
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-revuelto-power">1015 CV</span>
+                                <span class="spec-label">Max Power</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-revuelto-speed">350+ km/h</span>
+                                <span class="spec-label">Top Speed</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-revuelto-acceleration">2.5s</span>
+                                <span class="spec-label">0-100 km/h</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary" data-testid="button-discover-revuelto">Discover More</a>
+                    </div>
+                </div>
+
+                <div class="model-card" id="huracan" data-testid="card-model-huracan">
+                    <div class="model-image">
+                        <div class="model-placeholder" style="background: linear-gradient(135deg, #2d1810 0%, #8b4513 100%);">
+                            <span class="model-name-overlay">HURACÁN</span>
+                        </div>
+                    </div>
+                    <div class="model-content">
+                        <h3 class="model-name" data-testid="text-huracan-name">Huracán Tecnica</h3>
+                        <p class="model-description" data-testid="text-huracan-description">The most fun-to-drive Huracán. Rear-wheel drive with maximum driving pleasure.</p>
+                        <div class="model-specs">
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-huracan-power">640 CV</span>
+                                <span class="spec-label">Max Power</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-huracan-speed">325 km/h</span>
+                                <span class="spec-label">Top Speed</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-huracan-acceleration">3.2s</span>
+                                <span class="spec-label">0-100 km/h</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary" data-testid="button-discover-huracan">Discover More</a>
+                    </div>
+                </div>
+
+                <div class="model-card" id="urus" data-testid="card-model-urus">
+                    <div class="model-image">
+                        <div class="model-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                            <span class="model-name-overlay">URUS</span>
+                        </div>
+                    </div>
+                    <div class="model-content">
+                        <h3 class="model-name" data-testid="text-urus-name">Urus S</h3>
+                        <p class="model-description" data-testid="text-urus-description">The world's first Super Sport Utility Vehicle. Uncompromising performance meets luxury.</p>
+                        <div class="model-specs">
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-urus-power">666 CV</span>
+                                <span class="spec-label">Max Power</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-urus-speed">305 km/h</span>
+                                <span class="spec-label">Top Speed</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-value" data-testid="text-urus-acceleration">3.5s</span>
+                                <span class="spec-label">0-100 km/h</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary" data-testid="button-discover-urus">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="legacy-section" data-testid="section-legacy">
+        <div class="container">
+            <div class="legacy-content">
+                <div class="legacy-text">
+                    <h2 class="section-title" data-testid="text-legacy-title">Italian Excellence Since 1963</h2>
+                    <p class="legacy-description" data-testid="text-legacy-description">
+                        For six decades, Lamborghini has pushed the boundaries of automotive engineering and design. 
+                        From the legendary Miura to today's electrified supercars, we continue to define what's possible 
+                        in the world of high-performance vehicles.
+                    </p>
+                    <a href="about.html" class="btn btn-primary" data-testid="button-our-story">Our Story</a>
+                </div>
+                <div class="legacy-stats">
+                    <div class="stat-item" data-testid="stat-heritage">
+                        <span class="stat-number">60+</span>
+                        <span class="stat-label">Years of Heritage</span>
+                    </div>
+                    <div class="stat-item" data-testid="stat-models">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Iconic Models</span>
+                    </div>
+                    <div class="stat-item" data-testid="stat-excellence">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Italian Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title" data-testid="text-footer-models-title">Models</h3>
+                    <div class="footer-links">
+                        <a href="#revuelto" class="footer-link" data-testid="link-footer-revuelto">Revuelto</a>
+                        <a href="#huracan" class="footer-link" data-testid="link-footer-huracan">Huracán</a>
+                        <a href="#urus" class="footer-link" data-testid="link-footer-urus">Urus</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title" data-testid="text-footer-company-title">Company</h3>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link" data-testid="link-footer-about">About Us</a>
+                        <a href="contact.html" class="footer-link" data-testid="link-footer-contact">Contact</a>
+                        <a href="#" class="footer-link" data-testid="link-footer-news">News</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title" data-testid="text-footer-follow-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook" data-testid="link-facebook">f</a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter" data-testid="link-twitter">𝕏</a>
+                        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram" data-testid="link-instagram">📷</a>
+                        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube" data-testid="link-youtube">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-testid="text-copyright">&copy; <span id="currentYear"></span> Automobili Lamborghini S.p.A. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

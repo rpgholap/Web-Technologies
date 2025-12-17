@@ -1,0 +1,86 @@
+/* order matters in css 
+
+class: to select grp of elements 
+.class
+
+id: we can give same id only once
+#id
+
+element, element
+
+element element
+
+element1 > element : all elements who have parent element1 
+
+element1 + element : select element i.e exactly after element1
+ex. <ele1>xyz</ele1>
+    <ele>abc></ele>
+
+:hover : changes style after pointing mouse
+
+:last-child
+:first-child
+!important (not recommended)
+
+
+when selectors win out in the cascade depends on:
+- specificity : inline < ID < class, attributes < elements 
+- importance
+- source order
+
+
+
+*/
+
+* {
+  /* background-image: url(image.jpeg); */
+  /* background-size: cover; */
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #d4af6a;
+  justify-content: center;
+}
+
+form {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #aa8239;
+  justify-content: center;
+}
+
+div {
+  margin-bottom: 15px;
+  margin-top: auto;
+  display: flex;
+}
+
+.button {
+  color: rgb(219, 218, 217);
+  background-color: #aa8239;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.inlineProp a {
+  text-decoration: none;
+  color: #553700;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+h2 {
+  text-decoration: underline;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 90%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Room - Grand Hotel</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Hotel</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="booking.html" class="active">Booking</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn-login" id="loginBtnNav">Login</a>
+          <a href="signup.html" class="btn-signup" id="signupBtnNav">Sign Up</a>
+          <a
+            href="dashboard.html"
+            class="btn-dashboard"
+            id="dashboardBtn"
+            style="display: none"
+          >
+            <i class="fas fa-user"></i> Dashboard
+          </a>
+          <button class="btn-logout" id="logoutBtn" style="display: none">
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="container">
+        <h1>Book Your Stay</h1>
+        <p>Reserve your room in just a few simple steps</p>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="booking-container">
+          <!-- Booking Form -->
+          <div class="booking-form-container">
+            <h2>Reservation Details</h2>
+            <div class="alert" id="bookingAlert" style="display: none"></div>
+
+            <form id="bookingForm" class="booking-form">
+              <!-- Guest Information -->
+              <div class="form-section">
+                <h3><i class="fas fa-user"></i> Guest Information</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guestName">Full Name *</label>
+                    <input type="text" id="guestName" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="guestEmail">Email *</label>
+                    <input type="email" id="guestEmail" required />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guestPhone">Phone Number *</label>
+                    <input type="tel" id="guestPhone" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="guestCountry">Country</label>
+                    <select id="guestCountry">
+                      <option value="USA">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="India">India</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Room Selection -->
+              <div class="form-section">
+                <h3><i class="fas fa-bed"></i> Room Selection</h3>
+                <div class="form-group">
+                  <label for="roomType">Room Type *</label>
+                  <select id="roomType" required>
+                    <option value="">Select a room</option>
+                    <option value="standard" data-price="99">
+                      Standard Room - 1000/night
+                    </option>
+                    <option value="standard-plus" data-price="129">
+                      Standard Plus Room - 1200/night
+                    </option>
+                    <option value="deluxe" data-price="199">
+                      Deluxe Room - 2000/night
+                    </option>
+                    <option value="deluxe-family" data-price="249">
+                      Deluxe Family Room - 3500/night
+                    </option>
+                    <option value="executive-suite" data-price="349">
+                      Executive Suite - 5000/night
+                    </option>
+                    <option value="presidential-suite" data-price="599">
+                      Presidential Suite - 10000/night
+                    </option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guests">Number of Guests *</label>
+                    <select id="guests" required>
+                      <option value="1">1 Guest</option>
+                      <option value="2" selected>2 Guests</option>
+                      <option value="3">3 Guests</option>
+                      <option value="4">4 Guests</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="rooms">Number of Rooms *</label>
+                    <select id="rooms" required>
+                      <option value="1" selected>1 Room</option>
+                      <option value="2">2 Rooms</option>
+                      <option value="3">3 Rooms</option>
+                      <option value="4">4 Rooms</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dates -->
+              <div class="form-section">
+                <h3><i class="fas fa-calendar"></i> Stay Duration</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="checkIn">Check-In Date *</label>
+                    <input type="date" id="checkIn" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="checkOut">Check-Out Date *</label>
+                    <input type="date" id="checkOut" required />
+                  </div>
+                </div>
+                <div class="stay-info">
+                  <span id="nightsCount">0 nights</span>
+                </div>
+              </div>
+
+              <!-- Special Requests -->
+              <div class="form-section">
+                <h3><i class="fas fa-comment"></i> Special Requests</h3>
+                <div class="form-group">
+                  <label for="specialRequests"
+                    >Any special requirements? (Optional)</label
+                  >
+                  <textarea
+                    id="specialRequests"
+                    rows="4"
+                    placeholder="e.g., early check-in, late check-out, dietary requirements..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-block btn-large">
+                <i class="fas fa-check"></i> Complete Booking
+              </button>
+            </form>
+          </div>
+
+          <!-- Booking Summary -->
+          <div class="booking-summary">
+            <h3>Booking Summary</h3>
+            <div class="summary-content">
+              <div class="summary-item">
+                <span class="label">Room Type:</span>
+                <span class="value" id="summaryRoomType">-</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Check-In:</span>
+                <span class="value" id="summaryCheckIn">-</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Check-Out:</span>
+                <span class="value" id="summaryCheckOut">-</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Guests:</span>
+                <span class="value" id="summaryGuests">2</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Rooms:</span>
+                <span class="value" id="summaryRooms">1</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Nights:</span>
+                <span class="value" id="summaryNights">0</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-item">
+                <span class="label">Price per night:</span>
+                <span class="value" id="summaryPricePerNight">₹0</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Subtotal:</span>
+                <span class="value" id="summarySubtotal">₹0</span>
+              </div>
+              <div class="summary-item">
+                <span class="label">Tax (10%):</span>
+                <span class="value" id="summaryTax">₹0</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-item summary-total">
+                <span class="label">Total:</span>
+                <span class="value" id="summaryTotal">₹0</span>
+              </div>
+            </div>
+
+            <div class="summary-features">
+              <h4>Included in your stay:</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Free WiFi</li>
+                <li><i class="fas fa-check"></i> Complimentary Breakfast</li>
+                <li><i class="fas fa-check"></i> 24/7 Room Service</li>
+                <li><i class="fas fa-check"></i> Access to Pool & Gym</li>
+                <li><i class="fas fa-check"></i> Free Parking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Grand Hotel</h3>
+            <p>Experience luxury and comfort at its finest.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="rooms.html">Rooms</a></li>
+              <li><a href="booking.html">Booking</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Grand Hotel. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/booking.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Rooms - Grand Hotel</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Hotel</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html" class="active">Rooms</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn-login">Login</a>
+          <a href="signup.html" class="btn-signup">Sign Up</a>
+          <a
+            href="dashboard.html"
+            class="btn-dashboard"
+            id="dashboardBtn"
+            style="display: none"
+          >
+            <i class="fas fa-user"></i> Dashboard
+          </a>
+          <button class="btn-logout" id="logoutBtn" style="display: none">
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header-overlay"></div>
+      <div class="container">
+        <h1>Our Luxury Rooms</h1>
+        <p>Choose from our selection of elegantly designed rooms and suites</p>
+      </div>
+    </section>
+
+    <!-- Room Filters -->
+    <section class="room-filters">
+      <div class="container">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Rooms</button>
+          <button class="filter-btn" data-filter="standard">Standard</button>
+          <button class="filter-btn" data-filter="deluxe">Deluxe</button>
+          <button class="filter-btn" data-filter="suite">Suite</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms-section">
+      <div class="container">
+        <div class="rooms-grid">
+          <!-- Standard Room 1 -->
+          <div class="room-card" data-category="standard">
+            <div class="room-image">
+              <img
+                src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&h=400&fit=crop"
+                alt="Standard Room"
+              />
+              <div class="room-badge">Standard</div>
+            </div>
+            <div class="room-content">
+              <h3>Standard Room</h3>
+              <div class="room-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <p>
+                Comfortable and cozy room perfect for solo travelers or couples.
+              </p>
+              <div class="room-features">
+                <span><i class="fas fa-bed"></i> 1 Queen Bed</span>
+                <span><i class="fas fa-users"></i> 2 Guests</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price">
+                  <span class="price">₹1000</span>
+                  <span class="period">/night</span>
+                </div>
+                <a href="booking.html?room=standard" class="btn btn-primary"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Standard Room 2 -->
+          <div class="room-card" data-category="standard">
+            <div class="room-image">
+              <img
+                src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=600&h=400&fit=crop"
+                alt="Standard Plus Room"
+              />
+              <div class="room-badge">Standard</div>
+            </div>
+            <div class="room-content">
+              <h3>Standard Plus Room</h3>
+              <div class="room-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <p>
+                Spacious standard room with additional amenities and city view.
+              </p>
+              <div class="room-features">
+                <span><i class="fas fa-bed"></i> 2 Twin Beds</span>
+                <span><i class="fas fa-users"></i> 2 Guests</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price">
+                  <span class="price">₹1200</span>
+                  <span class="period">/night</span>
+                </div>
+                <a
+                  href="booking.html?room=standard-plus"
+                  class="btn btn-primary"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Deluxe Room 1 -->
+          <div class="room-card" data-category="deluxe">
+            <div class="room-image">
+              <img
+                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop"
+                alt="Deluxe Room"
+              />
+              <div class="room-badge">Deluxe</div>
+            </div>
+            <div class="room-content">
+              <h3>Deluxe Room</h3>
+              <div class="room-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>Luxurious room with premium amenities and stunning views.</p>
+              <div class="room-features">
+                <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                <span><i class="fas fa-users"></i> 2 Guests</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price">
+                  <span class="price">₹2000</span>
+                  <span class="period">/night</span>
+                </div>
+                <a href="booking.html?room=deluxe" class="btn btn-primary"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Deluxe Room 2 -->
+          <div class="room-card" data-category="deluxe">
+            <div class="room-image">
+              <img
+                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop"
+                alt="Deluxe Family Room"
+              />
+              <div class="room-badge">Deluxe</div>
+            </div>
+            <div class="room-content">
+              <h3>Deluxe Family Room</h3>
+              <div class="room-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                Perfect for families with separate sleeping areas and more
+                space.
+              </p>
+              <div class="room-features">
+                <span><i class="fas fa-bed"></i> 2 Beds</span>
+                <span><i class="fas fa-users"></i> 4 Guests</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price">
+                  <span class="price">₹3500</span>
+                  <span class="period">/night</span>
+                </div>
+                <a
+                  href="booking.html?room=deluxe-family"
+                  class="btn btn-primary"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Suite 1 -->
+          <div class="room-card" data-category="suite">
+            <div class="room-image">
+              <img
+                src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600&h=400&fit=crop"
+                alt="Executive Suite"
+              />
+              <div class="room-badge">Suite</div>
+            </div>
+            <div class="room-content">
+              <h3>Executive Suite</h3>
+              <div class="room-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                Spacious suite with separate living area and executive
+                amenities.
+              </p>
+              <div class="room-features">
+                <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                <span><i class="fas fa-users"></i> 2 Guests</span>
+                <span><i class="fas fa-couch"></i> Living Room</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price">
+                  <span class="price">₹5000</span>
+                  <span class="period">/night</span>
+                </div>
+                <a
+                  href="booking.html?room=executive-suite"
+                  class="btn btn-primary"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Suite 2 -->
+          <div class="room-card" data-category="suite">
+            <div class="room-image">
+              <img
+                src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=400&fit=crop"
+                alt="Presidential Suite"
+              />
+              <div class="room-badge">Suite</div>
+              <div class="room-badge-premium">Premium</div>
+            </div>
+            <div class="room-content">
+              <h3>Presidential Suite</h3>
+              <div class="room-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                Ultimate luxury with panoramic views and exclusive services.
+              </p>
+              <div class="room-features">
+                <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                <span><i class="fas fa-users"></i> 4 Guests</span>
+                <span><i class="fas fa-spa"></i> Private Spa</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price">
+                  <span class="price">₹10000</span>
+                  <span class="period">/night</span>
+                </div>
+                <a
+                  href="booking.html?room=presidential-suite"
+                  class="btn btn-primary"
+                  >Book Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Grand Hotel</h3>
+            <p>Experience luxury and comfort at its finest.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="rooms.html">Rooms</a></li>
+              <li><a href="booking.html">Booking</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Grand Hotel. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/rooms.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

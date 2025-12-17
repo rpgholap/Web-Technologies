@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Grand Hotel</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <i class="fas fa-hotel"></i>
+            <span>Grand Hotel</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a
+            href="dashboard.html"
+            class="btn-dashboard"
+            style="display: inline-flex"
+          >
+            <i class="fas fa-user"></i> Dashboard
+          </a>
+          <button
+            class="btn-logout"
+            id="logoutBtn"
+            style="display: inline-flex"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="dashboard-header">
+          <div class="user-welcome">
+            <h1>Welcome back, <span id="userName">Guest</span>!</h1>
+            <p>Manage your bookings and profile information</p>
+          </div>
+          <a href="booking.html" class="btn btn-primary">
+            <i class="fas fa-plus"></i> New Booking
+          </a>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="totalBookings">0</h3>
+              <p>Total Bookings</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="upcomingBookings">0</h3>
+              <p>Upcoming</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="completedBookings">0</h3>
+              <p>Completed</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-info">
+              <h3 id="loyaltyPoints">250</h3>
+              <p>Loyalty Points</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Bookings Section -->
+          <div class="dashboard-main">
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h2><i class="fas fa-list"></i> My Bookings</h2>
+                <div class="booking-tabs">
+                  <button class="tab-btn active" data-tab="upcoming">
+                    Upcoming
+                  </button>
+                  <button class="tab-btn" data-tab="past">Past</button>
+                  <button class="tab-btn" data-tab="cancelled">
+                    Cancelled
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div id="bookingsList" class="bookings-list">
+                  <!-- Bookings will be loaded here dynamically -->
+                  <div class="no-bookings">
+                    <i class="fas fa-calendar-times"></i>
+                    <p>No bookings found</p>
+                    <a href="booking.html" class="btn btn-primary"
+                      >Make a Booking</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="dashboard-sidebar">
+            <!-- Profile Card -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3><i class="fas fa-user"></i> Profile</h3>
+              </div>
+              <div class="card-body">
+                <div class="profile-info">
+                  <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                  </div>
+                  <div class="profile-details">
+                    <h4 id="profileName">Guest User</h4>
+                    <p id="profileEmail">guest@example.com</p>
+                    <p id="profilePhone">+1 (555) 123-4567</p>
+                  </div>
+                  <button
+                    class="btn btn-secondary btn-small"
+                    id="editProfileBtn"
+                  >
+                    <i class="fas fa-edit"></i> Edit Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <!-- Quick Actions -->
+            <div class="dashboard-card">
+              <div class="card-header">
+                <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+              </div>
+              <div class="card-body">
+                <div class="quick-actions">
+                  <a href="booking.html" class="quick-action">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>New Booking</span>
+                  </a>
+                  <a href="rooms.html" class="quick-action">
+                    <i class="fas fa-bed"></i>
+                    <span>Browse Rooms</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Edit Profile</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="editProfileForm">
+            <div class="form-group">
+              <label for="editName">Full Name</label>
+              <input type="text" id="editName" required />
+            </div>
+            <div class="form-group">
+              <label for="editEmail">Email</label>
+              <input type="email" id="editEmail" required />
+            </div>
+            <div class="form-group">
+              <label for="editPhone">Phone</label>
+              <input type="tel" id="editPhone" required />
+            </div>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary modal-close">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Details Modal -->
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Booking Details</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body" id="bookingModalBody">
+          <!-- Booking details will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2025 Grand Hotel. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

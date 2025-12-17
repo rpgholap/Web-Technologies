@@ -1,0 +1,68 @@
+[10,20,30,40]
+
+[<h1>Value is 10</h1>, <h1>Value is 20</h1>]
+
+componentDidMount
+
+componentDidUpdate : this will be called after component has been re-rendered due to state change, so now we can perform any operation on the state change
+it won't be executed for the 1st render
+
+componentWillUnmount : this function will be called just before the component is getting unmount
+
+
+useEffect is a hook to implement lifecycle functionality into function component
+
+
+useEffect(callback, dependency-array);
+
+componentDidMount -> useEffect(callback, []);
+useEffect must only return the function and nothing else
+
+X Y Z
+componentDidUpdate : 
+useEffect(callback, [X]);
+useEffect(callback, [Y]);
+useEffect(callback, [Z]);
+
+componentWillUnmount : useEffect(()=>{
+
+return ()=>{
+ clean up task
+}
+
+},[]);
+
+Steps to read form data:
+
+1. Create a state to hold the formdata
+2. Assign the data into the state when user is typing into the field
+3. When user clicks the submit button: read the entire form data from the state
+
+
+modules: react-router-dom, 
+
+react-bootstrap bootstrap 
+
+<Row>
+	<Col></Col>
+	<Col></Col>
+</Row>
+<Modal>
+<Navbar>
+
+npm I react-router-dom react-bootstrap bootstrap react-router-bootstrap
+
+CORS: Cross Origin Resource Sharing
+
+
+
+
+
+
+
+
+
+
+
+
+

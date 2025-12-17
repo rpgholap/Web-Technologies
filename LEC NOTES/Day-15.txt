@@ -1,0 +1,146 @@
+class, function
+<component-name>
+
+html:
+<p align="">
+<img src="" width="" height="">
+<table border="">
+
+
+react:
+tag  --> component
+attributes  --> prop
+
+Props: attributes or properties passed into the component when we are displaying them.
+
+a component can't decide the value of props by itself.
+a component can't change the value of props by itself.
+
+Function component: the props passed into the Function components, thses all props will become argument of the Function
+{
+	heading: "", intro:"", buttonText:""
+}
+
+we want below components in each page 
+    <h1>
+    <p>
+    <button>
+then we can create reusable component.
+
+
+
+class component:
+props object will be passed as the class member property, and the name of that property is 'props', we are getting it from Component parent class
+so we have to access it using 'this.props'
+
+
+Routing:
+Decide which component should be opened onto which route/url
+
+react-router-dom
+
+<Route>
+
+BrowserRouter -> Routes -> Route Route Route
+
+Link
+
+Props -> 
+State -> This is a such type of property for any component that can be changes, and initialized by the component itself
+
+Scoreboard
+
+0
++  -
+4  1
+
+state is the default/native/fundamental feature of a class component
+but not for the function component
+along with state we have lots of features those are the native to class components only
+
+now in order to implement all the features those we have into class component in a function component we need hooks
+
+
+react js works in a declarative way
+
+not in imperative
+
+class component:
+
+this.state = {}
+
+
+update state value: setState()
+
+whenever state value is updated then component will re-render so that component should read the latest value of the state
+
+State in a function component:
+
+now in order to implement all the features those we have into class component in a function component we need hooks
+
+Hook: just a function that will provide the class like features into the function component
+naming convention: prefix "use" in the hook function name
+eg:
+useState
+useEffect
+useCallback
+useMemo
+useSelector
+useDispatch
+useNavigate
+
+
+lifecycle:
+from mounting of a component to unmount phase there are few predefined functions those will be called automatically in a sequence
+
+class component:
+
+1. constructor
+2. render
+3. componentDidMount: only just after the 1st render call 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

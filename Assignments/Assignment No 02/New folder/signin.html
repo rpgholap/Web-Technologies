@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Lamborghini</title>
+    <meta name="description" content="Sign in to your Lamborghini account.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header" data-testid="header-main">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" data-testid="link-logo">
+                    <span class="logo-text">LAMBORGHINI</span>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+                    <div class="nav-dropdown" data-dropdown>
+                        <button class="nav-link dropdown-trigger" data-dropdown-trigger data-testid="button-models">
+                            Models <span class="arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" data-dropdown-menu>
+                            <a href="index.html#revuelto" class="dropdown-item" data-testid="link-revuelto">Revuelto</a>
+                            <a href="index.html#huracan" class="dropdown-item" data-testid="link-huracan">Huracán</a>
+                            <a href="index.html#urus" class="dropdown-item" data-testid="link-urus">Urus</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link" data-testid="link-about">About</a>
+                    <a href="contact.html" class="nav-link" data-testid="link-contact">Contact</a>
+                    <a href="signin.html" class="nav-link active" data-testid="link-signin">Sign In</a>
+                    <a href="signup.html" class="nav-link btn-primary" data-testid="button-signup">Configure</a>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" data-testid="button-menu-toggle">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sign In Section -->
+    <section class="auth-section" data-testid="section-auth">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h1 class="auth-title" data-testid="text-auth-title">Sign In</h1>
+                <p class="auth-subtitle" data-testid="text-auth-subtitle">Access your Lamborghini account</p>
+
+                <form id="signinForm" class="form" data-testid="form-signin">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required data-testid="input-email">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <label for="password" class="form-label">Password</label>
+                            <a href="#" class="forgot-password" id="forgotPassword" data-testid="link-forgot-password">Forgot password?</a>
+                        </div>
+                        <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required data-testid="input-password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" data-testid="button-submit">Sign In</button>
+
+                    <p class="auth-footer" data-testid="text-auth-footer">
+                        Don't have an account? <a href="signup.html" class="auth-link" data-testid="link-signup">Create one</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Models</h3>
+                    <div class="footer-links">
+                        <a href="index.html#revuelto" class="footer-link">Revuelto</a>
+                        <a href="index.html#huracan" class="footer-link">Huracán</a>
+                        <a href="index.html#urus" class="footer-link">Urus</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">News</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook">f</a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">𝕏</a>
+                        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram">📷</a>
+                        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Automobili Lamborghini S.p.A. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

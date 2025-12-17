@@ -1,0 +1,44 @@
+Once the login API has given the token, now to call any secured API we need to pass the token in the request
+
+
+request body
+request header -> meta data of the request
+We have lots of already defined request headers
+out of which one is 'Authorization'
+
+Authorization:   'Bearer <token-value>'
+
+Typescript
+Authentication-> JWT with RSA private key and public key
+Role based authentication and authorization
+
+ORM -> Object Relational Mapper -> Sequelize
+
+Controller -> Service
+
+Caching -> redis
+
+unit testing
+
+Database schema designing
+
+GraphQL
+
+Nest Js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

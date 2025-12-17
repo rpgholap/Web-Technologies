@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure Your Lamborghini | Sign Up</title>
+    <meta name="description" content="Create your account and start configuring your dream Lamborghini.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header" data-testid="header-main">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" data-testid="link-logo">
+                    <span class="logo-text">LAMBORGHINI</span>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+                    <div class="nav-dropdown" data-dropdown>
+                        <button class="nav-link dropdown-trigger" data-dropdown-trigger data-testid="button-models">
+                            Models <span class="arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" data-dropdown-menu>
+                            <a href="index.html#revuelto" class="dropdown-item" data-testid="link-revuelto">Revuelto</a>
+                            <a href="index.html#huracan" class="dropdown-item" data-testid="link-huracan">Huracán</a>
+                            <a href="index.html#urus" class="dropdown-item" data-testid="link-urus">Urus</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link" data-testid="link-about">About</a>
+                    <a href="contact.html" class="nav-link" data-testid="link-contact">Contact</a>
+                    <a href="signin.html" class="nav-link" data-testid="link-signin">Sign In</a>
+                    <a href="signup.html" class="nav-link active btn-primary" data-testid="button-signup">Configure</a>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" data-testid="button-menu-toggle">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sign Up Section -->
+    <section class="auth-section" data-testid="section-auth">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h1 class="auth-title" data-testid="text-auth-title">Configure Your Lamborghini</h1>
+                <p class="auth-subtitle" data-testid="text-auth-subtitle">Create an account to start your journey</p>
+
+                <form id="signupForm" class="form" data-testid="form-signup">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required data-testid="input-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required data-testid="input-email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required data-testid="input-password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="••••••••" required data-testid="input-confirm-password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" data-testid="button-submit">Create Account</button>
+
+                    <p class="auth-footer" data-testid="text-auth-footer">
+                        Already have an account? <a href="signin.html" class="auth-link" data-testid="link-signin">Sign in</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Models</h3>
+                    <div class="footer-links">
+                        <a href="index.html#revuelto" class="footer-link">Revuelto</a>
+                        <a href="index.html#huracan" class="footer-link">Huracán</a>
+                        <a href="index.html#urus" class="footer-link">Urus</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">News</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook">f</a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">𝕏</a>
+                        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram">📷</a>
+                        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Automobili Lamborghini S.p.A. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

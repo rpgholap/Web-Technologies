@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        console.log("started addition....");
+        setTimeout(() => {
+            var a = 2;
+            var b = 3;
+            var c = a + b;
+            console.log("sum is", c);
+            console.log("started finding factorial....");
+            setTimeout(() => {
+                var f = 1;
+                for (var i = 1; i <= c; i++) {
+                    f = f * i;
+                }
+                console.log("factorial is", f);
+                console.log("started calculating square....");
+                setTimeout(() => {
+                    var sq = f * f;
+                    console.log("square is", sq);
+                }, 1000);
+            }, 4000);
+        }, 2000);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

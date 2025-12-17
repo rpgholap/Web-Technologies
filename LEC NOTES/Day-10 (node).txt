@@ -1,0 +1,200 @@
+Node JS:
+it is a runtime environment for JS
+
+node js is not a lang, is not a library or framework
+
+node filename.js
+
+modules: in JS domain, module is a js file that provides reusable functions, properties etc
+
+
+types of modules:
+1. predefined -> node js
+2. user defined -> developer
+3. 3rd party module -> given by another organization
+
+
+user defined modules:
+
+mymodule.js -> module containing functions
+demo.js -> call functions of mymodule
+
+in order to use any module in a js file we have to require it 
+
+var obj = require(module-name); // it will return the object reference of the mentioned module
+
+mymodule -> sum, product
+
+var obj = require('mymodule');
+
+obj.sum()
+obj.product()
+
+
+Node js: interpreter
+
+.js 
+
+node filename.js
+
+modules:
+
+predefined modules
+user defined modules
+3rd party modules
+
+.js -> functions -> export
+
+exports.propname = function(){}
+
+
+obj = require(modulename)
+
+
+Predefined modules:
+modules which are officially developed by node js, when node js in installed these modules are also installed at the same time
+
+eg: fs, http, url, crypto
+
+
+fs: file system
+
+writeFile()
+writeFileSync()
+readFile()
+readFileSync()
+
+const fs = require('fs');
+
+fs.writeFile("myfile.txt","this is my text file",()=>{
+    console.log("write operation completed");
+}); // async
+console.log("after writing into file");
+
+
+
+const fs = require('fs');
+
+fs.writeFileSync("myfile.txt","this is my text file"); // sync
+console.log("write operation completed");
+console.log("after writing into file");
+
+
+const fs = require('fs');
+
+fs.readFile("myfile.txt",(error, data)=>{
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(data.toString());
+    }
+});
+console.log("after reading file");
+
+const fs = require('fs');
+
+const data = fs.readFileSync("myfile.txt");
+console.log(data.toString());
+console.log("after reading file");
+
+
+http: for developing server
+
+ip address, port number: unique identification no. given to any process
+
+
+ip + port  =  socket 
+
+192.168.12.1 
+social media -> 4500
+ecommerce app -> 5500
+library app -> 6500
+
+192.168.12.1:4500
+
+192.168.12.1:5500
+
+192.168.12.1:6500
+
+localhost / 127.0.0.1
+
+127.0.0.1:4500
+localhost:4500
+
+const http = require('http');
+
+const server = http.createServer((request,response)=>{
+    response.write("hello world");
+    response.end();
+});
+
+server.listen(5677,()=>{
+    console.log("server is started on port 5677");
+});
+
+
+in place of require, we can go with import statement
+
+
+every node js application must have package.json file
+
+in package.json file we can mention author, description, git repo url, license
+
+npm : node package manager
+using npm we can generate package.json
+using npm we can install/uninstall 3rd party module
+
+
+npm init 
+
+mymodule -> fun1, fun2
+
+import {properties} from module-name;
+import {fun1,fun2} from 'mymodule';
+
+http -> createServer
+
+import {createServer} from 'http';
+
+fs -> writeFile
+
+import {writeFile} from 'fs';
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

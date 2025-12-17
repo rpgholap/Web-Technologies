@@ -1,0 +1,16 @@
+HTML:
+- 
+
+HTML5:
+- many evaluation in HTML
+-  includes semantic elements (make website more descriptive)
+        - article
+        - header
+        - footer
+        - details
+        - figure
+        - main
+        - nav
+        - section
+        - summary
+        - time

@@ -1,0 +1,349 @@
+sync: blocking
+async: non blocking
+
+
+callback hell
+
+Promise is used to avoid the callback hell
+
+step 1: We have to make a promise
+step 2: Promise will be executed
+step 3: Now Either Promise will be fulfilled or it will be rejected
+step 4: Promise handling: based on the promise state we have to take suitable actions
+
+Promise will have 3 states:
+1. Pending: till the promise task is not executed
+2. Resolved
+3. Rejected
+
+we as a developer, while creating a promise has to decide manually in which case promise will be resolved and it will rejected
+
+Promise:
+in the promise callback, 2 arguments will be always there and they will be automatically populated and they will become functions. !st argument will be a function to resolve the promise and 2nd argument will be a function to reject the promise
+
+  var myPromise = new Promise((resolve, reject)=>{
+
+	var n = 6;
+	if(n%2 === 0){
+		resolve();
+		// mark the promise as resolved
+	}
+	else{
+		reject();
+		// mark the promise as rejected
+	}
+
+  }); promise-executor
+
+ Promise handling:
+we need the object of promise to handle it
+on the promise object we have to call two predefined functions those are going to handle it
+
+1. then : when promise will be resolved then will be called
+2. catch: when promise is rejected catch will be called
+
+
+
+// promise definition
+        var myPromise = new Promise((resolve,reject)=>{
+            var n = 7;
+
+            if(n%2===0){
+                resolve();
+            }
+            else{
+                reject();
+            }
+
+        });
+
+
+        // promise handling : based on promise state we have to take actions
+        myPromise.then(()=>{
+            console.log("promise is resolved")
+        }).catch(()=>{
+            console.log("promise is rejected");
+        });
+
+
+ // promise definition
+        var myPromise = new Promise((resolve,reject)=>{
+            var n = 8;
+
+            if(n%2===0){
+                resolve("promise is resolved, num is divisible by 2");
+            }
+            else{
+                reject("Error: Promise rejection, num is not divisible by 2");
+            }
+
+        });
+
+
+        // promise handling : based on promise state we have to take actions
+        myPromise.then((msg)=>{
+            console.log(msg);
+        }).catch((error)=>{
+            console.log(error);
+        });
+
+
+function checkEven() {
+            return new Promise((resolve, reject) => {
+                var n = 8;
+
+                if (n % 2 === 0) {
+                    resolve("promise is resolved, num is divisible by 2");
+                }
+                else {
+                    reject("Error: Promise rejection, num is not divisible by 2");
+                }
+
+            });
+        }
+        // promise definition
+
+        var obj = checkEven();
+
+        // promise handling : based on promise state we have to take actions
+        obj.then((msg) => {
+            console.log(msg);
+        }).catch((error) => {
+            console.log(error);
+        });
+
+
+new way of handling the promises:
+
+using async and await keyword
+
+1. then & catch
+2. async & await keywords
+
+
+using async and await:
+
+await: when a function is called which is returning a promise, we can place await keyword in the call
+
+
+try{
+	var sumResult = await sum(2,3);
+	var factResult = await factorial(sumResult);
+	var sqResult = await square(factResult);
+
+}
+catch(error){
+	console.log(error);
+}
+
+async: has to applied on the function signature in which await keyword has been written
+or it can be applied on the functions which are returning promise
+
+
+async function sum(a, b) {
+            return new Promise((resolve, reject) => {
+                console.log("started addition....");
+                setTimeout(() => {
+                    var c = a + b;
+
+                    if (c < 0) {
+                        reject("Error: Invalid addition value");
+                    }
+                    else {
+                        resolve(c);
+                    }
+                }, 2000);
+            });
+        }
+
+        async function factorial(num) {
+            return new Promise((resolve, reject) => {
+                console.log("started calculating factorial....");
+                setTimeout(() => {
+                    var f = 1;
+                    for (var i = 1; i <= num; i++) {
+                        f = f * i;
+                    }
+                    if (f > 0) {
+                        resolve(f)
+                    }
+                    else {
+                        reject("Error: Invalid fact result")
+                    }
+
+                }, 4000)
+            });
+        }
+
+        async function square(num) {
+            return new Promise((resolve, reject) => {
+                console.log("started calculating square....");
+                setTimeout(() => {
+                    var sq = num * num;
+                    resolve(sq);
+                }, 1000);
+            });
+        }
+
+        async function handlePromise() {
+            try {
+                const sumResult = await sum(2, 3);
+                console.log("Sum is", sumResult);
+                const factResult = await factorial(sumResult);
+                console.log("Factorial is", factResult);
+                const squareResult = await square(factResult);
+                console.log("Square is", squareResult);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        handlePromise();
+
+
+DOM Manipulation:
+
+DOM: Document Object Model
+
+Whenever a web page is loaded in the browser then 1st it creates a tree like structure for all the tags and this tree structure is called DOM, and by reading this DOM only the browser displays the elements 
+
+document is an object that represent the DOM
+
+Once the DOM has been created in the browser memory, so we can perform certain modification in the tree structure and hence the page will be live updated 
+
+1. We can add new element
+2. We can remove existing element from the DOM
+3. We can change the content of any element
+4. We can get the content of the element
+5. We can change the style also 
+6. We can change the attribute values
+7. We can get the attribute values
+
+
+
+
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p>This is para demo</p>
+    <button onclick="handleButtonClick()">Click</button>
+
+    <script>
+        function handleButtonClick(){
+            alert("hello world");
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+<p id="mypara">This is para demo</p>
+    <button onclick="handleButtonClick()">Click</button>
+
+    <script>
+        function handleButtonClick(){
+            var obj = document.getElementById("mypara");
+            console.log(obj); // log the entire element
+            console.log(obj.innerHTML); // log the content of the element
+        }
+    </script>
+
+
+<p id="mypara">This is para demo</p>
+    <button onclick="handleButtonClick()">Click</button>
+
+    <script>
+        function handleButtonClick(){
+            var obj = document.getElementById("mypara");
+            obj.remove();
+        }
+    </script>
+
+
+<p id="mypara">This is para demo</p>
+    <button onclick="handleButtonClick()">Click</button>
+
+    <script>
+        function handleButtonClick(){
+            var obj = document.getElementById("mypara");
+            obj.style.backgroundColor="red";
+        }
+    </script>
+
+
+<p id="mypara">This is para demo</p>
+    <div id="mycontainer">
+
+    </div>
+    <button onclick="handleButtonClick()">Click</button>
+
+    <script>
+        function handleButtonClick(){
+            var container = document.getElementById("mycontainer");
+            var newElement = document.createElement("h1");
+            newElement.innerHTML = "New h1 element";
+            container.appendChild(newElement);
+        }
+    </script>
+
+
+<input type="password" placeholder="Enter password" id="passwordfield">
+    <button onclick="showPassword()" id="btn">Show</button>
+
+    <script>
+        function showPassword() {
+            var fieldObj = document.getElementById("passwordfield");
+            var btnObj = document.getElementById("btn");
+            if (btnObj.innerHTML === 'Show') {
+                fieldObj.setAttribute("type", "text");
+                var attrValue = fieldObj.getAttribute("type");
+                btnObj.innerHTML = "Hide";
+            }
+            else {
+                fieldObj.setAttribute("type", "password");
+                btnObj.innerHTML = "Show";
+            }
+
+        }
+    </script>
+
+
+<input type="text" id="myfield">
+    <button onclick="getInputValue()" id="btn">Take Input</button>
+
+    <script>
+        function getInputValue(){
+            var fieldObj = document.getElementById("myfield");
+            console.log(fieldObj.value);
+        }
+    </script>
+
+<input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="add()" id="btn">Add</button>
+    <h3 id="result"></h3>
+    <script>
+        function add() {
+            var n1 = parseInt(document.getElementById("num1").value); 
+            var n2 = parseInt(document.getElementById("num2").value);
+            var n3 = n1 + n2;
+            document.getElementById("result").innerHTML = "Sum is "+n3;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+

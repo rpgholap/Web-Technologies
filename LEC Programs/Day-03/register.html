@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/CSS/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+      input{
+        color: rgb(116, 28, 211);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- use GET not POST method -->
+     <div >                  <!--to divide the content in different sections-->
+     <span></span>                <!-- inline element : we can line style to specific element -->
+    <form method="get" action="action.php">
+      <!-- input: self closing tag -->
+      First Name:
+      <input type="text" placeholder="Enter your first name" name="firstname"/><br />
+      Last Name: <input type="text" placeholder="Enter your Last name" name="lastname"/> <br />
+      Email: <input type="email" placeholder="Enter your email" required name="email"/>
+      <br />
+      Password:
+      <input type="password" placeholder="Enter your password"  name="password" /><br />
+      <br />
+      BirthDay: <input type="date" placeholder="Birth Date" name="birthdate" /><br />
+      Gender: <br />
+      <input type="radio" name="gender" /> Male<br />
+      <input type="radio" name="gender" /> Female<br />
+      <input type="radio" name="gender" /> Other<br />
+      Game Type:<br />
+      <input type="checkbox" name="indoor"> Indoor </input><br />
+      <input type="checkbox" name="outdoor"> Outdoor </input><br />
+      cars:
+      <select>
+        <option value="volvo" name="volvo" >Volvo</option>
+        <option value="saab"name="saab">Saab</option>
+        <option value="fiat" name="fiat">Fiat</option>
+        <option value="audi" name="audi">Audi</option>
+        </select> <br>
+      <input type="submit" value="Register" class="button"/>
+      <input type="reset" value="Reset" class="button" />
+    </form>
+    </div>
+  </body>
+</html>
+
+<!-- /*
+http://127.0.0.1:3000/register.html
+- property: value
+- name assiociated with value
+?firstname=ww
+&lastname=www
+&email=qha%40gmail.com
+&password=222222
+&birthdate=2025-10-24
+&gender=on
+&indoor=on
+&outdoor=on
+*/ -->

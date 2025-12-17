@@ -74,5 +74,154 @@ MERN Stack: MySQL/Mongo Express React Node
 
 
 
+frontend processing backend
+
+
+sign up/user registration flow
+
+
+Frontend: display the form with input fields
+
+on click of submit button request should go on the server and form data should be submitted onto the server
+
+Server: server is going to read the form data from incoming request 
+	server will insert the data into database 
+	on successful insertion in the db
+	send response with status 200 
+
+search field
+
+
+Frontend:
+
+HTML: Hyper Text Markup Language
+
+HTML is for creating skeleton of a web page
+Using HTML we can display things on a web page
+
+Scripting lang: no compiler JS, PHP
+Programming lang: compile C, C++, Java
+
+Markup lang: We can't write logics with markup langs
+             1. store the data -> XML -> to store the configs 
+             2. display the data -> HTML
+
+HTML syntax: we have to make use of tags only
+
+<tag-name> opening tag
+
+</tag-name> closing tag
+
+types of tags:
+1. empty tag -> opening only 
+2. container tag -> opening and closing both 
+
+HTML provides the predefined tags only 
+HTML is not case sensititve
+extension will be .html .htm
+html code will be read by browser and by reading the html code browser will display the data accordingly
+HTML is error free lang
+
+
+<html>
+	<head>
+		<title>My first page</title>
+	</head>
+	<body>
+		<p>Hello world</p>
+	</body>
+</html>
+
+bydefault everything will be auto aligned at the left side 
+
+to customize a tag we are getting several properties/attributes 
+eg: <p align="center">Hello world</p>
+
+headings : 6 tags
+h1, h2, h3, h4, h5, h6
+
+images:
+<img src=""> opening tag only
+
+file source: 
+2 types of paths are there
+1. absolute path -> D:\cdac-14-oct\oct-14-evening\photo.png
+2. relative path -> photo.png
+
+
+<img src="../images/photo.png">  ../ is to come out of current folder
+
+display the links:
+
+anchor tag <a>text</a>
+
+<a href="https://www.flipkart.com">Visit Flipkart</a>
+
+<a href="https://www.flipkart.com" target="_blank">Visit Flipkart</a>  to open link in a new tab
+
+superscript & subscript
+
+<sup></sup>
+<sub></sub>
+
+<p>(a+b)<sup>2</sup></p>
+<p>H<sub>2</sub>O</p>
+
+<br> for line break
+
+list:
+series of items
+
+types of list:
+1. ordered list: labels are going to follow either numeric sequence or alphabetic sequence
+	<ol></ol>
+
+<ol>
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ol>
+<ol type="a">  1, a, A, i, I
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ol>
+
+<ol type="a" start="4">
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ol>
+
+2. unordered list:
+
+   <ul type="circle"> disc | square | circle
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Indore</li>
+            <li>Pune</li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

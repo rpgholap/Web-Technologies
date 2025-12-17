@@ -1,0 +1,198 @@
+Jquery: is a small library that has inbuilt functions which makes js development easier
+
+
+document.getElementById("input-field")
+
+$("#input-field")
+
+$(selector).eventNameFunction(()=>{})
+
+<input type="button" value="click me" id="mybtn">
+
+
+$("#mybtn").click(()=>{
+	
+});
+
+before executing logics using jquery code we need to make sure that entire web page is ready in the browser 
+
+
+$(document).ready(()=>{
+	
+});
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="mybtn">Click me</button>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#mybtn").click(()=>{
+                alert("hello");
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myheading">Hello world</h1>
+    <button type="button" id="hidebtn">Hide</button>
+    <button type="button" id="showbtn">Show</button>
+    <button type="button" id="togglebtn">Toggle</button>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#hidebtn").click(()=>{
+                $("#myheading").hide(1000);
+            });
+            $("#showbtn").click(()=>{
+                $("#myheading").show(1000);
+            });
+            $("#togglebtn").click(()=>{
+                $("#myheading").toggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" placeholder="Enter password" id="passwordField">
+    <button type="button" id="btn">Show</button>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+           $("#btn").click(()=>{
+            if($("#btn").html() === 'Show'){
+                $("#passwordField").attr('type','text');
+                $("#btn").html('Hide')
+            }
+            else{
+                $("#passwordField").attr('type','password');
+                $("#btn").html('Show')
+            }
+           })
+        });
+    </script>
+</body>
+</html>
+
+
+
+Mongo Db:
+
+database: systematic collection of data 
+
+SQL : table -> rows-> record and columns : structured
+
+NoSQL : key value pair : unstructured
+
+      : collection -> documents (json object)
+
+Elastic search
+
+Employees 
+{id:101, name:"rohan", age:52, phone:"", salary:3333}
+{email:'', address:''}
+{}
+{}
+{}
+
+
+JS based database
+
+show databases;
+
+use mydb; 
+
+db object is predefined in mongodb and it will represent the currently opened database
+
+use schooldata;
+
+db.createCollection('students')
+
+show collections;
+
+
+db.students.insertOne({roll:101, name:"Pooja", marks:82, city:"Mumbai", gender:"female"});
+
+
+db.students.find() === select * from students;
+
+
+select * from students where roll = 101;
+
+db.students.find({roll:101});
+
+select * from students where marks >= 90;
+
+db.students.find({
+	marks:{$gt:90}
+});
+
+$lt
+$gte
+$lte
+$ne
+$in
+
+marks> 80 pune
+
+select * from students where marks >= 80 and city = 'pune';
+
+$and
+$or
+
+db.students.find({
+	$and : [
+		{marks:{$gte:80}},
+		{city:'Pune'}
+	]
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

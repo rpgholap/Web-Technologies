@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Lamborghini | Find Your Dealer</title>
+    <meta name="description" content="Contact Lamborghini. Find your nearest dealer or get in touch with us for more information.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header" data-testid="header-main">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo" data-testid="link-logo">
+                    <span class="logo-text">LAMBORGHINI</span>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+                    <div class="nav-dropdown" data-dropdown>
+                        <button class="nav-link dropdown-trigger" data-dropdown-trigger data-testid="button-models">
+                            Models <span class="arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" data-dropdown-menu>
+                            <a href="index.html#revuelto" class="dropdown-item" data-testid="link-revuelto">Revuelto</a>
+                            <a href="index.html#huracan" class="dropdown-item" data-testid="link-huracan">Huracán</a>
+                            <a href="index.html#urus" class="dropdown-item" data-testid="link-urus">Urus</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-link" data-testid="link-about">About</a>
+                    <a href="contact.html" class="nav-link active" data-testid="link-contact">Contact</a>
+                    <a href="signin.html" class="nav-link" data-testid="link-signin">Sign In</a>
+                    <a href="signup.html" class="nav-link btn-primary" data-testid="button-signup">Configure</a>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" data-testid="button-menu-toggle">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header" data-testid="section-page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title" data-testid="text-page-title">Contact Us</h1>
+            <p class="page-subtitle" data-testid="text-page-subtitle">Get in Touch With Lamborghini</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section" data-testid="section-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <div class="form-card">
+                        <h2 class="form-title" data-testid="text-form-title">Send Us a Message</h2>
+                        <form id="contactForm" class="form" data-testid="form-contact">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required data-testid="input-name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required data-testid="input-email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (234) 567-8900" data-testid="input-phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="interest" class="form-label">Model of Interest</label>
+                                <select id="interest" name="interest" class="form-input" data-testid="select-interest">
+                                    <option value="">Select a model</option>
+                                    <option value="revuelto">Revuelto</option>
+                                    <option value="huracan">Huracán</option>
+                                    <option value="urus">Urus</option>
+                                    <option value="other">General Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Tell us about your interest in Lamborghini..." required data-testid="textarea-message"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full" data-testid="button-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-card" data-testid="card-headquarters">
+                        <div class="contact-icon">🏢</div>
+                        <h3 class="contact-card-title">Headquarters</h3>
+                        <p class="contact-text">
+                            Via Modena, 12<br>
+                            40019 Sant'Agata Bolognese<br>
+                            Bologna, Italy
+                        </p>
+                    </div>
+
+                    <div class="contact-card" data-testid="card-phone">
+                        <div class="contact-icon">📞</div>
+                        <h3 class="contact-card-title">Phone</h3>
+                        <a href="tel:+390514817611" class="contact-link">+39 051 6817 611</a>
+                    </div>
+
+                    <div class="contact-card" data-testid="card-email">
+                        <div class="contact-icon">✉️</div>
+                        <h3 class="contact-card-title">Email</h3>
+                        <a href="mailto:info@lamborghini.com" class="contact-link">info@lamborghini.com</a>
+                    </div>
+
+                    <div class="contact-card" data-testid="card-showroom">
+                        <div class="contact-icon">🏎️</div>
+                        <h3 class="contact-card-title">Find a Dealer</h3>
+                        <p class="contact-text">
+                            Locate your nearest Lamborghini dealer for a personalized experience.
+                        </p>
+                        <a href="#" class="btn btn-secondary btn-small" data-testid="button-find-dealer">Search Dealers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Models</h3>
+                    <div class="footer-links">
+                        <a href="index.html#revuelto" class="footer-link">Revuelto</a>
+                        <a href="index.html#huracan" class="footer-link">Huracán</a>
+                        <a href="index.html#urus" class="footer-link">Urus</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link">About Us</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">News</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook">f</a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">𝕏</a>
+                        <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram">📷</a>
+                        <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Automobili Lamborghini S.p.A. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
